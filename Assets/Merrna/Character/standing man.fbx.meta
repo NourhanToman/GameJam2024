@@ -8,37 +8,37 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body_map
-    second: {fileID: 2100000, guid: e1495beda7dacf14e9a3cf80632048e1, type: 2}
+    second: {fileID: 2100000, guid: d14ff6bd4b8a6e74aa2ab3ea8d11e2af, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyelashes_map
-    second: {fileID: 2100000, guid: 11f3dfe8c2178284f88632dc1a1c2ef8, type: 2}
+    second: {fileID: 2100000, guid: f124b1dbc6599d14ea426f7cef620a07, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head_map
-    second: {fileID: 2100000, guid: 26086eb216f884d438a82879bdfaab7a, type: 2}
+    second: {fileID: 2100000, guid: 5b2c315b33390314b88d94941775595a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LeftCornea_map
-    second: {fileID: 2100000, guid: c89df8c4e33d5ff409873e13275d7464, type: 2}
+    second: {fileID: 2100000, guid: 76968e1b30441964a91ffc6f0c997439, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: RightCornea_map
-    second: {fileID: 2100000, guid: b26977588d2c986419e460bec3f213f7, type: 2}
+    second: {fileID: 2100000, guid: c5fd1fd1eb9235a4598c0522b89a451e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TeethLower_map
-    second: {fileID: 2100000, guid: 8b52cf0caffbd3a448453a5c33a8578f, type: 2}
+    second: {fileID: 2100000, guid: f8caa9a940bc5fd4da746fc3fafa49aa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: outfit_map
-    second: {fileID: 2100000, guid: 7a092db85edfe684299c114ad21d8f54, type: 2}
+    second: {fileID: 2100000, guid: 0b0ef5ce1f94850408744ed207fd2b95, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,7 +59,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -128,13 +128,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
