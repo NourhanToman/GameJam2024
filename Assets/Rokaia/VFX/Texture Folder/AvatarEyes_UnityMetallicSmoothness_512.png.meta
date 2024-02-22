@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Rokaia/VFX/Texture Folder/AvatarEyes_UnityMetallicSmoothness_512.png.meta
 guid: 2165261ddd22a264084026bfd80fbd96
+========
+guid: 32f167285f6b15b42b1748607c743e13
+>>>>>>>> MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_UnityMetallicSmoothness_1K.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Rokaia/VFX/Texture Folder/AvatarEyes_Roughness_512.jpg.meta
 guid: f9b224a7a19a0264b94416e87ced2d86
+========
+guid: 619750e2094f7aa4c8f4db773420ed62
+>>>>>>>> MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Roughness_1K.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

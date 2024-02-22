@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Merrna/Scenes/Peace room/peace room.unity.meta
 guid: 63cf2e26e89c4a045abd7f48f3e4d43a
+========
+guid: 94e2634323cee364aa503548f3f4f31b
+>>>>>>>> MA_Branch:Assets/Mohamed Ashraf/Scenes/Player Interaction.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

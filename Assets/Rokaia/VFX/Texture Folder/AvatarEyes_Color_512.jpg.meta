@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Rokaia/VFX/Texture Folder/AvatarEyes_Color_512.jpg.meta
 guid: acce84e66a7544e459ca423db12cb16e
+========
+guid: 49ec95f9ec014cc43b80f1ebc26726b4
+>>>>>>>> MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Color_1K.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
