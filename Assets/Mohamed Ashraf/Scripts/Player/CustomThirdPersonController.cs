@@ -1,4 +1,7 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
+
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -75,6 +78,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        // Events
+        public UnityEvent _interactEvent;
+
         // cinemachine
         private float _cinemachineTargetPitch;
 
@@ -107,6 +113,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        private bool isInteracting = false;
 
         private bool IsCurrentDeviceMouse
         {
@@ -155,6 +162,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            OnInteract();
         }
 
         private void LateUpdate()
@@ -331,6 +339,23 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void OnInteract()
+        {
+            if (_input.interact && !isInteracting)
+            {
+                StartCoroutine(Interact());
+            }
+        }
+
+        private IEnumerator Interact()
+        {
+            isInteracting = true;
+            _interactEvent?.Invoke();
+            yield return new WaitForSeconds(0.6f);
+            isInteracting = false;
+            _input.interact = false;
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
