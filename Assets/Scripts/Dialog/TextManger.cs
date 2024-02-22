@@ -68,6 +68,6 @@ public class TextManger : MonoBehaviour
 
         messageObj.transform.localScale = _interactableTxtScale;
         messageObj.GetComponent<TextMeshPro>().text = message.messageText;
-        messageObj.GetComponent<TextAnimation>().StartAnimation();
+       // messageObj.GetComponent<TextAnimation>().StartAnimation();
     }
 }
