@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Rokaia/Sprites/RaperPage.jpg.meta
 guid: 8563038ee6b57b2428eb9677e95b2297
+========
+guid: 36122df0f6e905c4ca2381178789e487
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Normal1_1K.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -78,6 +82,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
+<<<<<<<< HEAD:Assets/Rokaia/Sprites/RaperPage.jpg.meta
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -91,6 +96,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
+========
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Normal1_1K.jpg.meta
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3

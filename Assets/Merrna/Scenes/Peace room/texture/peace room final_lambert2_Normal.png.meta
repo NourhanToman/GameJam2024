@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 19c4c91e1be64b34983d89397457c974
+<<<<<<<< HEAD:Assets/Merrna/Scenes/Peace room/texture/peace room final_lambert2_Normal.png.meta
+guid: d087eb45044c1104f8b5f17c8ed7dd86
+========
+guid: 619750e2094f7aa4c8f4db773420ed62
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Roughness_1K.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,6 +98,22 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+<<<<<<<< HEAD:Assets/Merrna/Scenes/Peace room/texture/peace room final_lambert2_Normal.png.meta
+========
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Roughness_1K.jpg.meta
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0

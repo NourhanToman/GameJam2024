@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 2c62a141f6be2c940a285945a153c6a5
+<<<<<<<< HEAD:Assets/Merrna/Scenes/Peace room/texture/peace room final_standardSurface2_BaseMap.png.meta
+guid: 6d5621449dc05a24faa272a40152fbe5
+========
+guid: 49ec95f9ec014cc43b80f1ebc26726b4
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Color_1K.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,6 +102,22 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<<< HEAD:Assets/Merrna/Scenes/Peace room/texture/peace room final_standardSurface2_BaseMap.png.meta
+========
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+>>>>>>>> origin/MA_Branch:Assets/Rokaia/VFX/Texture Folder/AvatarBodyMale_Color_1K.jpg.meta
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
