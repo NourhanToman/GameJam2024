@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private float _interactionRange = 3f;
-    [SerializeField] private GameObject pre;
+    //[SerializeField] private GameObject pre;
 
     public void Interact()
     {
