@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/BlackMat.mat.meta
 guid: d93f885fc98039343a8d2b4c60c2d1f7
+========
+guid: 40db3173a05ae3242b1c182a09b0a183
+>>>>>>>> MA_Branch:Assets/Character/Character Art/Animations/StarterAssetsThirdPerson.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
