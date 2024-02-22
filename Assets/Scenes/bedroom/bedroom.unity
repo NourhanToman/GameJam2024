@@ -2419,12 +2419,12 @@ PrefabInstance:
     - target: {fileID: 2604058165011535022, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 67.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604058165011535022, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.y
-      value: 24
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2770137984806838559, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
