@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 6566391ccf3fae34caaa0306b952f57a
+  - enabled: 1
+    path: Assets/Scenes/bedroom/bedroom.unity
+    guid: 2fe81450eee69d64ca6d6ef3fd36e2a6
+  - enabled: 1
+    path: Assets/Scenes/Trial_Room/Trial_Scene.unity
+    guid: 311edb6c17ae7124eb74bcb168122a97
+  - enabled: 1
+    path: Assets/Scenes/justice room/justice.unity
+    guid: 9f7f111974cb29b4fa39f458930c257e
+  - enabled: 1
+    path: Assets/Scenes/Freedom/freedom.unity
+    guid: fafeccdffe2c016468981d5eb95cb4bc
+  - enabled: 1
+    path: Assets/Scenes/Peace room/peace room.unity
+    guid: 63cf2e26e89c4a045abd7f48f3e4d43a
   m_configObjects: {}
