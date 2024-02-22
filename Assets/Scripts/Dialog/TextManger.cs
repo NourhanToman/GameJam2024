@@ -37,7 +37,7 @@ public class TextManger : MonoBehaviour
     }
     private void LoadDialog()
     {
-        string[] script = File.ReadAllLines("Assets/Resources/Dialog.txt");
+        string[] script = File.ReadAllLines("Assets/Resources/Reaper_Dialoge.txt");
         int count = 1;
         foreach(Message msg in Dialogmessages)
         {

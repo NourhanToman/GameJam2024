@@ -22,6 +22,7 @@ public class Blinking : MonoBehaviour
     {
         camera = Camera.main;
         volume = camera.GetComponent<Volume>();
+        Blink();
 
     }
 
