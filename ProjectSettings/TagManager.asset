@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Scanner
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Post Processing
+  - 
   - Water
   - UI
-  - TxT
+  - Interactable
   - 
   - 
   - 
