@@ -15,6 +15,7 @@ public class WaterBehavier : MonoBehaviour
     void Start()
     {
         lowerWaterLevel = transform.position.y;
+        Rise();
     }
     void Update()
     {

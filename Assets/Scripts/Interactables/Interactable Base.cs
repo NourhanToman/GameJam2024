@@ -4,33 +4,17 @@ using UnityEngine;
 
 public class InteractableBase : MonoBehaviour, IInteractable
 {
-    #region Variables    
-    [Space, Header("Interactable Settings")]
+    [SerializeField] private bool _multipleUse = false;
+    [SerializeField] private bool _isInteractable = true;
 
-    [SerializeField] private bool holdInteract = true;
-    [SerializeField] private float holdDuration = 1f;
+    [SerializeField] private string _tooltipMessage = "interact";
 
-    [Space]
-    [SerializeField] private bool multipleUse = false;
-    [SerializeField] private bool isInteractable = true;
+    public bool MultipleUse => _multipleUse;
+    public bool IsInteractable => _isInteractable;
+    public string TooltipMessage => _tooltipMessage;
 
-    [SerializeField] private string tooltipMessage = "interact";
-    #endregion
-
-    #region Properties    
-    public float HoldDuration => holdDuration;
-
-    public bool HoldInteract => holdInteract;
-    public bool MultipleUse => multipleUse;
-    public bool IsInteractable => isInteractable;
-
-    public string TooltipMessage => tooltipMessage;
-    #endregion
-
-    #region Methods
     public virtual void OnInteract()
     {
         Debug.Log("INTERACTED: " + gameObject.name);
     }
-    #endregion
 }

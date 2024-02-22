@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameStates state;
    
-
     private void Awake()
     {
         Instance = this;
@@ -18,8 +17,6 @@ public class GameManager : MonoBehaviour
         state = GameStates.Bedroom;
         
     }
-
-
    public void UpdateGameState(GameStates states)
     {
         state = states;
@@ -50,11 +47,8 @@ public class GameManager : MonoBehaviour
 
         }
     }
-
-
-   
-
 }
+
 public enum GameStates
 {
     Bedroom,
