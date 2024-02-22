@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/MA_WaterShader.unity.meta
 guid: e1fb6d562c5d3ee4a8c4a4bba22769c9
+========
+guid: 94e2634323cee364aa503548f3f4f31b
+>>>>>>>> MA_Branch:Assets/Scenes/MA_PlayerInteraction.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4814.1665, g: 3118.276, b: 2328.9612, a: 1}
+  m_IndirectSpecularColor: {r: 4817.149, g: 3120.4438, b: 2330.1409, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -599,10 +599,50 @@ PrefabInstance:
       propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 628a898b520218e4bb1ab23dd24b15bf,
+        type: 2}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEventSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254129490179726600, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7327841568576443029, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756516329}
   m_SourcePrefab: {fileID: 100100000, guid: 665c4a9f5e945b746819c23f091ecdb9, type: 3}
 --- !u!1 &167005988
 GameObject:
@@ -652,7 +692,7 @@ MonoBehaviour:
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 756516329}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 1
@@ -774,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _containerGO: {fileID: 1671051896}
-  _playerInteract: {fileID: 0}
+  _playerInteract: {fileID: 756516329}
 --- !u!1 &648922307
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +921,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &756516321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7327841568576443029, guid: 665c4a9f5e945b746819c23f091ecdb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 115004509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &756516329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756516321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b8bd9e83cb40d42a0317bf762177e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionRange: 3
 --- !u!1 &954658506
 GameObject:
   m_ObjectHideFlags: 0
