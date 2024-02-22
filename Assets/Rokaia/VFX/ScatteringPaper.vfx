@@ -1981,7 +1981,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":21.690000534057618,"y":0.7599999904632568,"z":-0.3199999928474426}}'
+      m_SerializableObject: '{"vector":{"x":69.69999694824219,"y":5.46999979019165,"z":2.5799999237060549}}'
     m_Space: 0
   m_Property:
     name: B
@@ -2694,7 +2694,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":4.237094879150391,"g":1.1627938747406006,"b":0.0,"a":0.0}'
+      m_SerializableObject: '{"r":2.4014947414398195,"g":0.23679959774017335,"b":0.0,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: _Dissolve_Color
@@ -2983,7 +2983,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.01
+      m_SerializableObject: 0.0001
     m_Space: 2147483647
   m_Property:
     name: b

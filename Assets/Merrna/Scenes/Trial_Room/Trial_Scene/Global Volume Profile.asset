@@ -83,13 +83,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.163
+    m_Value: 0.055
   scatter:
     m_OverrideState: 1
-    m_Value: 0.574
+    m_Value: 0.11
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
