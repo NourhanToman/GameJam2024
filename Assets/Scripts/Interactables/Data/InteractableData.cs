@@ -5,21 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InteractionDataSO", menuName = "Game Data/InteractionSO")]
 public class InteractableData : ScriptableObject
 {
-    private InteractableBase m_interactable;
+    private InteractableBase _interactable;
 
     public InteractableBase Interactable
     {
-        get => m_interactable;
-        set => m_interactable = value;
+        get => _interactable;
+        set => _interactable = value;
     }
 
     public void Interact()
     {
-        m_interactable.OnInteract();
+        _interactable.OnInteract();
         ResetData();
     }
 
-    public bool IsSameInteractable(InteractableBase _newInteractable) => m_interactable == _newInteractable;
-    public bool IsEmpty() => m_interactable == null;
-    public void ResetData() => m_interactable = null;
+    public bool IsSameInteractable(InteractableBase _newInteractable) => _interactable == _newInteractable;
+    public bool IsEmpty() => _interactable == null;
+    public void ResetData() => _interactable = null;
 }
