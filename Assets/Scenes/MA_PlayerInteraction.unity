@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4814.1353, g: 3118.3071, b: 2328.965, a: 1}
+  m_IndirectSpecularColor: {r: 4814.1665, g: 3118.276, b: 2328.9612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -602,32 +602,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7379506329336217804, guid: 665c4a9f5e945b746819c23f091ecdb9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 115004511}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665c4a9f5e945b746819c23f091ecdb9, type: 3}
---- !u!1 &115004510 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7379506329336217804, guid: 665c4a9f5e945b746819c23f091ecdb9,
-    type: 3}
-  m_PrefabInstance: {fileID: 115004509}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &115004511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115004510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b8bd9e83cb40d42a0317bf762177e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionRange: 2
-  pre: {fileID: 8161125930450136402, guid: dfaaa460cabec61439268952827844bc, type: 3}
 --- !u!1 &167005988
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +652,7 @@ MonoBehaviour:
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115004511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 1
@@ -736,7 +712,7 @@ MonoBehaviour:
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115004511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: shoe
         m_Mode: 2
@@ -798,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _containerGO: {fileID: 1671051896}
-  _playerInteract: {fileID: 115004511}
+  _playerInteract: {fileID: 0}
 --- !u!1 &648922307
 GameObject:
   m_ObjectHideFlags: 0
