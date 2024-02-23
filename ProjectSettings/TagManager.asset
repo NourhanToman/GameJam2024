@@ -9,6 +9,7 @@ TagManager:
   - Reaper
   - Dialog
   - Text
+  - Water
   layers:
   - Default
   - TransparentFX

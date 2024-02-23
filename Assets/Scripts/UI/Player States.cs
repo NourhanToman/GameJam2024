@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
+
 public class PlayerStates : MonoBehaviour
 {
     public static PlayerStates Instance { get; private set; }
+    [SerializeField] private Camera camera;
+    private Volume volume;
+    private Vignette vignette;
+
 
     public float _currentHealth;
     public float _maxHealth;
@@ -15,7 +22,7 @@ public class PlayerStates : MonoBehaviour
     public float _oxygenTimer = 100;
     public float _decreaseInterval = 1f;
     public float _outOfAirDamage = 5f;
-
+    private bool isDrowning = false;
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -28,11 +35,13 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _currentHealth = _maxHealth;
         _currentOxygenPercent = _maxOxygenPercent;
+        camera = Camera.main;
+        volume = camera.GetComponent<Volume>();
+        volume.profile.TryGet(out vignette);
 
     }
 
@@ -41,6 +50,7 @@ public class PlayerStates : MonoBehaviour
         _currentOxygenPercent -= _oxygenDecreasedRate * _decreaseInterval;
         if(_currentOxygenPercent < 0)
         {
+            Debug.Log(_currentOxygenPercent);
             _currentOxygenPercent = 0;
             SetHealth(_currentHealth - _outOfAirDamage);
         }
@@ -51,28 +61,69 @@ public class PlayerStates : MonoBehaviour
         _currentHealth = health;
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
-        /*
-           Rokaia logic of water
-           if(7aga t3rfo hwa t7t el maya aw fe room el peace abl ma y7l el rooms el 2wlanya)
+         if (isDrowning)
            {
-              _oxygenTimer = Time.deltaTime;
-              if(_oxygenTimer >= _decreaseInterval) 
-              {
-                  DecreaseOxygen();
-                  _oxygenTimer = 0;
-              }
+            _oxygenTimer = Time.deltaTime;
+            if (_oxygenTimer >= _decreaseInterval)
+            {
+                DecreaseOxygen();
+                _oxygenTimer = 0;
+            }
            }
 
-           //23mli resst lel oxygen lma el player ytl3 mn el maya aw ytl3 mn el peace room:
+        if (GameManager.Instance.state != GameStates.Peace)
             PlayerStates.Instance._currentOxygenPercent = PlayerStates.Instance._maxOxygenPercent;
-         */
 
-        /*
-            Nourhan logic el health 
-            lma el y7sl 7aga el camera vienette yzdad bnfs 3aded el health el hyn2so we byt3ml reset b3d 5 swany msln lw m5ad4 damage
-         */
+
+        if (GameManager.Instance.state != GameStates.Freedom)
+            PlayerStates.Instance._currentOxygenPercent = PlayerStates.Instance._maxOxygenPercent;
+
+        if (!isDrowning)
+        {
+            _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime); 
+            if (vignette != null)
+            {
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime);
+            }
+        }
+
+        if (isDrowning)
+        {
+            _currentHealth = Mathf.Lerp(_maxHealth, _currentHealth, Time.deltaTime);
+            if (vignette != null)
+            {
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime); 
+            }
+
+            if (vignette.intensity.value == 1)
+            {
+                GameManager.Instance.UpdateGameState(GameStates.Trail);
+            }
+        }
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            
+            isDrowning = true;
+        }
+    }
+
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            isDrowning = false;
+        }
     }
 }
