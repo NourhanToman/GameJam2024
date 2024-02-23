@@ -6,17 +6,19 @@ using UnityEngine;
 
 public class PasscodePuzzle : InteractableBase
 {
-    [SerializeField] string passcodeAnswer;
-    [SerializeField] string playerInput;
-    [SerializeField] Transform puzzleSpawner;
+    [SerializeField] private string passcodeAnswer;
+    [SerializeField] private string playerInput;
+    [SerializeField] private Transform puzzleSpawner;
     public bool isSolved;
     private bool isActive = false;
-    [SerializeField] InteractableObjText puzzleSolveText;
+    [SerializeField] private InteractableObjText puzzleSolveText;
+    [SerializeField] private InteractableObjText puzzleWrongTxt;
 
     public override void OnInteract()
     {
         base.OnInteract();
 
+        playerInput = "";
         isActive = true;
         if (!isSolved)
         {
@@ -27,46 +29,78 @@ public class PasscodePuzzle : InteractableBase
             TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
         }
     }
+
     private void DisplayPuzzleText()
     {
-        TextManger.instance.ShowInteractableText(puzzleSpawner, $"Enter The Password:+{new string('*', playerInput.Length)} ", 0.5f);
-        TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
+        TextManger.instance.ShowInteractableText(puzzleSpawner, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.5f);
+        TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.4f);
     }
     public void Update()
     {
         if (isActive)
         {
-            if(Input.GetKeyDown(KeyCode.Backspace) && playerInput.Length > 0) 
+            if (Input.GetKeyDown(KeyCode.Backspace) && playerInput.Length > 0)
             {
                 Debug.Log("deleted" + playerInput);
                 playerInput = playerInput.Substring(0, playerInput.Length - 1);
                 editDisplayedChar();
             }
-
-            if (playerInput.Length < passcodeAnswer.Length)
+            else if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("added" + playerInput);
-                playerInput += GetKeyPressed();
-                Debug.Log("added" + playerInput);
+                StopPuzzle();
+            }
+            else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Debug.Log("com" + playerInput);
+                Debug.Log("com" + passcodeAnswer);
 
-                editDisplayedChar();
+                if (playerInput == passcodeAnswer)
+                {
+                    isSolved = true;
+                    StopPuzzle();
+                }
+                else
+                {
+                    StopPuzzle();
+                    TextManger.instance.ShowInteractableText(transform, puzzleWrongTxt);
+                    OnInteract();
+                }
+            }
+            else
+            {
+                if (playerInput.Length < passcodeAnswer.Length)
+                {
+                    Debug.Log("added" + playerInput);
+                    playerInput += GetKeyPressed();
+                    Debug.Log("added" + playerInput);
+
+                    editDisplayedChar();
+                }
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 StopPuzzle();
             }
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 Debug.Log("com" + playerInput);
                 Debug.Log("com" + passcodeAnswer);
 
-                if (playerInput == passcodeAnswer){
+                if (playerInput == passcodeAnswer)
+                {
                     isSolved = true;
                     StopPuzzle();
+                }
+                else
+                {
+                    StopPuzzle();
+                    TextManger.instance.ShowInteractableText(transform, puzzleWrongTxt);
+                    OnInteract();
                 }
             }
         }
     }
+
     private void StopPuzzle()
     {
         isActive = false;
@@ -78,22 +112,23 @@ public class PasscodePuzzle : InteractableBase
                 Destroy(child.gameObject);
             }
         }
-        if(isSolved)
+        if (isSolved)
         {
             TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
-           // BedroomRoom.instance.SetRequired(TXT.roomReq); for room implementation IMP
+            // BedroomRoom.instance.SetRequired(TXT.roomReq); for room implementation IMP
         }
     }
-    char GetKeyPressed()
+
+    private char GetKeyPressed()
     {
-        foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
+        foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKeyDown(keyCode))
+            if (Input.GetKey(keyCode))
             {
                 char pressedChar = keyCode.ToString()[0];
                 if (char.IsLetterOrDigit(pressedChar))
                 {
-                      return pressedChar;
+                    return pressedChar;
                 }
             }
         }
@@ -101,7 +136,8 @@ public class PasscodePuzzle : InteractableBase
     }
     private void editDisplayedChar()
     {
-        foreach(Transform child in transform)
+        Debug.Log(playerInput);
+        foreach (Transform child in transform)
         {
             if (child.gameObject.CompareTag("Text"))
             {

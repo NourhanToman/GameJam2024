@@ -2587,9 +2587,9 @@ MonoBehaviour:
     type: 3}
   _InteractablePrefab: {fileID: 6956638830375574776, guid: 0b53645b5e5b19d4896b7eb314cb29e5,
     type: 3}
-  _dialogTxtDistance: 2
+  _dialogTxtDistance: 10
   _interactTxtDistnce: 0.5
-  _dialogHight: 0
+  _dialogHight: 1
   _dialogScale: {x: 0.2, y: 0.2, z: 0.2}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
   _player: {fileID: 1171820146}
