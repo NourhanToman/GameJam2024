@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class OxygenBar : MonoBehaviour
 {
-    private Slider _slider;
+    [SerializeField] private Image _fill;
     [SerializeField] private TextMeshProUGUI _OxygenCounter;
 
     private float _currentOxygen, _maxOxygen;
 
     private void Awake()
     {
-        _slider = GetComponent<Slider>();
+        _fill = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class OxygenBar : MonoBehaviour
         _maxOxygen = PlayerStates.Instance._maxOxygenPercent;
 
         float _fillValue = _currentOxygen / _maxOxygen;
-        _slider.value = _fillValue;
+        _fill.fillAmount = _fillValue;
 
         _OxygenCounter.text = _currentOxygen + "%";
     }
