@@ -5,5 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Texts/MessageTxt")]
 public class InteractableObjText : ScriptableObject
 {
+   
     public string messageText;
+    public RoomReq roomReq;
+
 }

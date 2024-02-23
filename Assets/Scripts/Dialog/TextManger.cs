@@ -39,13 +39,13 @@ public class TextManger : MonoBehaviour
     {
         string[] script = File.ReadAllLines("Assets/Resources/Reaper_Dialoge.txt");
         int count = 1;
-        foreach(Message msg in Dialogmessages)
+        /*foreach(Message msg in Dialogmessages)
         {
             msg.audioName = $"{count}";
             msg.message = script[count-1];
             Dialogmessages.Add(msg);
             count++;
-        } 
+        } */
     }
     public void PlayMessage(int messageNo)
     {
@@ -63,7 +63,7 @@ public class TextManger : MonoBehaviour
     }
     public void ShowInteractableText(Transform interactable , InteractableObjText message)
     {
-        Vector3 playerForward = _player.transform.forward;
+       
         GameObject messageObj = Instantiate(_textPrefab, interactable.position + new Vector3(0, _interactTxtDistnce, 0), Quaternion.identity);
 
         messageObj.transform.localScale = _interactableTxtScale;
