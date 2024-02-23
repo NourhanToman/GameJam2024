@@ -41,12 +41,17 @@ public class TextManger : MonoBehaviour
     }
     private void Start()
     {
-        _player = Camera.main.gameObject;
+        
         Dialogmessages = new List<Message>();
         _dialogScale = _DialogTextPrefab.transform.localScale;
         LoadDialog();
        
        
+    }
+
+    private void Update()
+    {
+        _player = Camera.main.gameObject;
     }
     private void LoadDialog()
     {
