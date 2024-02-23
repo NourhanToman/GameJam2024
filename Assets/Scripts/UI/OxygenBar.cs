@@ -17,8 +17,7 @@ public class OxygenBar : MonoBehaviour
     {
         _fill = GetComponent<Image>();
     }
-
-    
+ 
     private void Update()
     {
        
@@ -27,7 +26,6 @@ public class OxygenBar : MonoBehaviour
 
         float _fillValue = _currentOxygen / _maxOxygen;
         _fill.fillAmount = _fillValue;
-       /// Debug.Log(_fillValue);
         _OxygenCounter.text = _currentOxygen + "%";
     }
 }
