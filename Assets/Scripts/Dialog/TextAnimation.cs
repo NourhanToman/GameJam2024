@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class TextAnimation : MonoBehaviour
 {
-    [Range(0, 5)][SerializeField] float animationSpeed = 0.5f;
-    [Range(0, 5)][SerializeField] float destroyTime = 0.5f;
+    [Range(0, 0.5f)][SerializeField] float timeStep = 0.5f;
+    [Range(0, 0.5f)][SerializeField] float destroyTime = 0.5f;
 
     private TextMeshPro text;
+    public bool keepText = false;
     int totalVisableCharactersNo;
     int visableCharNo;
     int counter;
+    
     private void Awake()
     {
         text = GetComponent<TextMeshPro>();
@@ -32,11 +34,11 @@ public class TextAnimation : MonoBehaviour
             {
                 // counter = 0; for looping the effect
                 yield return new WaitForSeconds(destroyTime);
-                Destroy(gameObject);
+                if(!keepText)
+                  Destroy(gameObject);
             }
             counter++;
-            yield return new WaitForSeconds(animationSpeed);
+            yield return new WaitForSeconds(timeStep);
         }
-
     }
 }

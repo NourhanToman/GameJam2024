@@ -12,6 +12,6 @@ public class ShowInteractTXT : InteractableBase
 
         TextManger.instance.ShowInteractableText(transform,TXT);
 
-        Bedroom.instance.SetRequired(TXT.roomReq);
+        BedroomRoom.instance.SetRequired(TXT.roomReq);
     }
 }

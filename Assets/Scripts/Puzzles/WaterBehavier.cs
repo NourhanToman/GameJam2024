@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterBehavier : MonoBehaviour
+public class WaterBehavier : InteractableBase
 {
     [SerializeField] Transform waterTransform;
     [SerializeField] float risingDuration;
@@ -12,10 +12,16 @@ public class WaterBehavier : MonoBehaviour
     private bool isRising;
     private bool isLowering;
 
-    void Start()
+    private void Start()
     {
-        lowerWaterLevel = transform.position.y;
+        lowerWaterLevel = waterTransform.position.y;
         Rise();
+    }
+    public override void OnInteract()
+    {
+        base.OnInteract();
+        lowerWaterLevel = waterTransform.position.y;
+        Lower();
     }
     void Update()
     {
@@ -42,7 +48,7 @@ public class WaterBehavier : MonoBehaviour
         while (counter < risingDuration)
         {
             counter += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,highWaterLevel, transform.position.z), counter / risingDuration);
+            waterTransform.position = Vector3.Lerp(waterTransform.position, new Vector3(waterTransform.position.x, highWaterLevel, waterTransform.position.z), counter / risingDuration);
             yield return null;
         }
         isLowering = false;
@@ -60,9 +66,10 @@ public class WaterBehavier : MonoBehaviour
         while (counter < loweringDuration)
         {
             counter += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,lowerWaterLevel,transform.position.z), counter / loweringDuration);
+            waterTransform.position = Vector3.Lerp(waterTransform.position, new Vector3(waterTransform.position.x, lowerWaterLevel, waterTransform.position.z), counter / loweringDuration);
             yield return null;
         }
-        isLowering = false;
+        risingDuration = 0;
+        isRising = false;
     }
 }

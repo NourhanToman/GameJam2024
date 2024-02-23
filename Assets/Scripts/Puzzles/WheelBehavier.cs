@@ -2,29 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class WheelBehavier : MonoBehaviour
+public class WheelBehavier : InteractableBase
 {
     [SerializeField] float rotationDuration;
     [SerializeField] Quaternion rotatingVector;
     private bool isRotating;
-
-    void Start()
+    public UnityEvent lowerWATER;
+    public override void OnInteract()
     {
-       
-    }
-    void Update()
-    {
-        
-    }
-    void Rotate()
-    {
+        base.OnInteract();
         StartCoroutine("StartRotating");
+        lowerWATER?.Invoke();
     }
     private IEnumerator StartRotating()
     {
         if (isRotating)
         {
+            Debug.Log(isRotating);
             yield break;
         }
         isRotating = true;

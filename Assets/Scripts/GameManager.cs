@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum roomsRequirments
+{
+    book,
+    portal,
+    box
+
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
