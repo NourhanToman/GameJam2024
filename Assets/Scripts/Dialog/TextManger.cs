@@ -13,7 +13,6 @@ public class TextManger : MonoBehaviour
 
     [SerializeField] GameObject _DialogTextPrefab;
     [SerializeField] GameObject _InteractablePrefab;
-    [SerializeField] GameObject _player;
 
     [SerializeField] float _dialogTxtDistance;
     [SerializeField] float _interactTxtDistnce;
@@ -22,6 +21,7 @@ public class TextManger : MonoBehaviour
 
     [SerializeField] Vector3 _dialogScale;
     [SerializeField] Vector3 _interactableTxtScale;
+    public GameObject _player;
     
 
     void Awake()
@@ -41,6 +41,7 @@ public class TextManger : MonoBehaviour
     }
     private void Start()
     {
+        _player = Camera.main.gameObject;
         Dialogmessages = new List<Message>();
         _dialogScale = _DialogTextPrefab.transform.localScale;
         LoadDialog();
