@@ -8,21 +8,22 @@ using UnityEngine.Rendering.HighDefinition;
 public class PlayerStates : MonoBehaviour
 {
     public static PlayerStates Instance { get; private set; }
-    [SerializeField] private Camera camera;
     private Volume volume;
     private Vignette vignette;
-
+    private Camera _camera;
 
     public float _currentHealth;
     public float _maxHealth;
 
     public float _currentOxygenPercent;
     public float _maxOxygenPercent = 100;
-    public float _oxygenDecreasedRate = 1f;
+    public float _oxygenDecreasedRate = 10f;
     public float _oxygenTimer = 100;
     public float _decreaseInterval = 1f;
-    public float _outOfAirDamage = 5f;
+    public float _outOfAirDamage = 25f;
+    public GameObject _pool;
     private bool isDrowning = false;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -39,10 +40,9 @@ public class PlayerStates : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         _currentOxygenPercent = _maxOxygenPercent;
-        camera = Camera.main;
-        volume = camera.GetComponent<Volume>();
+        _camera = Camera.main;
+        volume = _camera.GetComponent<Volume>();
         volume.profile.TryGet(out vignette);
-
     }
 
     private void DecreaseOxygen()
@@ -50,7 +50,6 @@ public class PlayerStates : MonoBehaviour
         _currentOxygenPercent -= _oxygenDecreasedRate * _decreaseInterval;
         if(_currentOxygenPercent < 0)
         {
-            Debug.Log(_currentOxygenPercent);
             _currentOxygenPercent = 0;
             SetHealth(_currentHealth - _outOfAirDamage);
         }
@@ -63,25 +62,36 @@ public class PlayerStates : MonoBehaviour
 
  
     void Update()
-    {
-         if (isDrowning)
-           {
-            _oxygenTimer = Time.deltaTime;
+    {        
+        if (_camera.transform.position.y - _pool.transform.position.y <= 0f)
+        {
+            isDrowning = true;
+        }
+        else 
+        {
+            isDrowning = false;
+        }
+        
+        if (isDrowning)
+        {
+            _oxygenTimer += Time.deltaTime;
             if (_oxygenTimer >= _decreaseInterval)
             {
                 DecreaseOxygen();
                 _oxygenTimer = 0;
             }
-           }
+        }
 
-        if (GameManager.Instance.state != GameStates.Peace)
+        /*if (GameManager.Instance.state == GameStates.Peace || GameManager.Instance.state == GameStates.Freedom)
+        {
+            Debug.Log("can");
+        }
+        else
+        {
             PlayerStates.Instance._currentOxygenPercent = PlayerStates.Instance._maxOxygenPercent;
+        }*/
 
-
-        if (GameManager.Instance.state != GameStates.Freedom)
-            PlayerStates.Instance._currentOxygenPercent = PlayerStates.Instance._maxOxygenPercent;
-
-        if (!isDrowning)
+        if (isDrowning == false)
         {
             _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime); 
             if (vignette != null)
@@ -91,39 +101,17 @@ public class PlayerStates : MonoBehaviour
         }
 
         if (isDrowning)
-        {
-            _currentHealth = Mathf.Lerp(_maxHealth, _currentHealth, Time.deltaTime);
+        {    
             if (vignette != null)
             {
                 vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime); 
             }
 
-            if (vignette.intensity.value == 1)
+            Debug.Log(_currentHealth);
+            if (_currentHealth <= 0)
             {
                 GameManager.Instance.UpdateGameState(GameStates.Trail);
             }
-        }
-
-
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            
-            isDrowning = true;
-        }
-    }
-
-
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            isDrowning = false;
         }
     }
 }
