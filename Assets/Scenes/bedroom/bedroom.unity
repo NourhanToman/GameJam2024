@@ -2466,11 +2466,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68dc755e7f949c43ab2ed23f25e4c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 476154628}
-  _textPrefab: {fileID: 3602208596672464880, guid: df8d59d5cf6f2414eadcb35f0b44c743,
+  _DialogTextPrefab: {fileID: 5239843956051376595, guid: df8d59d5cf6f2414eadcb35f0b44c743,
     type: 3}
+  _InteractablePrefab: {fileID: 6956638830375574776, guid: 0b53645b5e5b19d4896b7eb314cb29e5,
+    type: 3}
+  _player: {fileID: 476154628}
   _dialogTxtDistance: 2
   _interactTxtDistnce: 0.5
+  _dialogHight: 0
   _dialogScale: {x: 1, y: 1, z: 1}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &1020511351

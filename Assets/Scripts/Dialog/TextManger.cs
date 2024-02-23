@@ -11,10 +11,15 @@ public class TextManger : MonoBehaviour
 
     List<Message> Dialogmessages;
 
+    [SerializeField] GameObject _DialogTextPrefab;
+    [SerializeField] GameObject _InteractablePrefab;
     [SerializeField] GameObject _player;
-    [SerializeField] GameObject _textPrefab;
+
     [SerializeField] float _dialogTxtDistance;
     [SerializeField] float _interactTxtDistnce;
+    [SerializeField] float _dialogHight;
+
+
     [SerializeField] Vector3 _dialogScale;
     [SerializeField] Vector3 _interactableTxtScale;
     
@@ -37,7 +42,7 @@ public class TextManger : MonoBehaviour
     private void Start()
     {
         Dialogmessages = new List<Message>();
-        _dialogScale = _textPrefab.transform.localScale;
+        _dialogScale = _DialogTextPrefab.transform.localScale;
         LoadDialog();
        
        
@@ -66,7 +71,9 @@ public class TextManger : MonoBehaviour
     public void ShowDialogText(string message)
     {
         Vector3 playerForward = _player.transform.forward.normalized;
-        GameObject messageObj = Instantiate(_textPrefab, new Vector3(_player.transform.position.x, _player.transform.position.y, _player.transform.position.z + _dialogTxtDistance) , _textPrefab.transform.rotation,_player.transform);
+        GameObject messageObj = Instantiate(_DialogTextPrefab, new Vector3(_player.transform.position.x,
+            _player.transform.position.y + _dialogHight,
+            _player.transform.position.z + _dialogTxtDistance) , _DialogTextPrefab.transform.rotation,_player.transform);
 
         messageObj.transform.localScale = _dialogScale;
         messageObj.GetComponent<TextMeshPro>().text = message;
@@ -75,7 +82,7 @@ public class TextManger : MonoBehaviour
     public void ShowInteractableText(Transform interactable , InteractableObjText message)
     {
        
-        GameObject messageObj = Instantiate(_textPrefab, interactable.position + new Vector3(0, _interactTxtDistnce, 0), Quaternion.identity);
+        GameObject messageObj = Instantiate(_InteractablePrefab, interactable.position + new Vector3(0, _interactTxtDistnce, 0), Quaternion.identity);
 
         messageObj.transform.localScale = _interactableTxtScale;
         messageObj.GetComponent<TextMeshPro>().text = message.messageText;

@@ -6039,12 +6039,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68dc755e7f949c43ab2ed23f25e4c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 172165653}
-  _textPrefab: {fileID: 3602208596672464880, guid: df8d59d5cf6f2414eadcb35f0b44c743,
+  _DialogTextPrefab: {fileID: 3602208596672464880, guid: df8d59d5cf6f2414eadcb35f0b44c743,
     type: 3}
-  _dialogTxtDistance: 5
+  _InteractablePrefab: {fileID: 3169683066320264932, guid: 0b53645b5e5b19d4896b7eb314cb29e5,
+    type: 3}
+  _player: {fileID: 172165653}
+  _dialogTxtDistance: 10
   _interactTxtDistnce: 0.5
-  _dialogScale: {x: 0.001, y: 0.001, z: 0.001}
+  _dialogHight: 2
+  _dialogScale: {x: 0.5, y: 0.5, z: 0.5}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &1090613984
 GameObject:
