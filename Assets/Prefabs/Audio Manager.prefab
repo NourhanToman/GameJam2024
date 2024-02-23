@@ -325,6 +325,12 @@ MonoBehaviour:
   - _clipName: Water
     type: 0
     _clip: {fileID: 8300000, guid: 8a61b28d96ab9c645a7956376193ca79, type: 3}
+  - _clipName: Player2
+    type: 0
+    _clip: {fileID: 8300000, guid: 4504daa40a29d9044b6f6ff91a276e0e, type: 3}
+  - _clipName: Player1
+    type: 0
+    _clip: {fileID: 8300000, guid: 1623cee72352b464c8754193092f5978, type: 3}
   dialog:
   - _clipName: 1
     type: 2

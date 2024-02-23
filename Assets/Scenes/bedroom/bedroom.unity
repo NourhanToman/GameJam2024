@@ -6410,31 +6410,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
-        type: 3}
-      propertyPath: sfxAudio.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[6]._clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4504daa40a29d9044b6f6ff91a276e0e, type: 3}
-    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[7]._clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1623cee72352b464c8754193092f5978, type: 3}
-    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[6]._clipName
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[7]._clipName
-      value: Player1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -58,15 +58,20 @@ public class Bedroom : MonoBehaviour
 
     public void SetRequired(RoomReq room)
     {
-        switch (room) { 
-            case RoomReq.book:
-                BookOpen = true; 
-                StartCoroutine(DelaySound(clip.length, AudioType.SFX,"Player2"));
-                
-                break; 
-            case RoomReq.portal: PortalOpen = true;
-                StartCoroutine(StartPortal());
-                break;
+        if (!BookOpen || !PortalOpen)
+        {
+            switch (room)
+            {
+                case RoomReq.book:
+                    BookOpen = true;
+                    StartCoroutine(DelaySound(clip.length, AudioType.SFX, "Player2"));
+
+                    break;
+                case RoomReq.portal:
+                    PortalOpen = true;
+                    StartCoroutine(StartPortal());
+                    break;
+            }
         }
     }
 
