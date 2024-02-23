@@ -88,4 +88,16 @@ public class TextManger : MonoBehaviour
         messageObj.GetComponent<TextMeshPro>().text = message.messageText;
         messageObj.GetComponent<TextAnimation>().StartAnimation();
     }
+    public void ShowInteractableText(Transform interactable, string message , float offSet)
+    {
+
+        GameObject messageObj = Instantiate(_InteractablePrefab, new Vector3(0, offSet, 0), Quaternion.identity , interactable);
+
+        messageObj.transform.localScale = _interactableTxtScale;
+        messageObj.GetComponent<TextMeshPro>().text = message;
+        TextAnimation txtAnim = messageObj.GetComponent<TextAnimation>();
+        txtAnim.keepText = true;
+        txtAnim.StartAnimation();
+
+    }
 }
