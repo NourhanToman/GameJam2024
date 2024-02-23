@@ -25,7 +25,7 @@ public class InteractionController : MonoBehaviour
 
     void CheckForInteractable()
     {
-        Ray _ray = new Ray(_camera.transform.position, _camera.transform.forward);
+        Ray _ray = new Ray(_camera.ViewportToWorldPoint(new Vector3(0.5f,0.5f)), _camera.transform.forward);
         RaycastHit _hitInfo;
 
         bool _hitSomething = Physics.SphereCast(_ray, _raySphereRadius, out _hitInfo, _rayDistance, _interactableLayer);
@@ -65,20 +65,15 @@ public class InteractionController : MonoBehaviour
     public void CheckForInteractableInput()
     {
         if (_interactionData.IsEmpty())
-            return;
-
-        _interacting = true;
-   
-        //_interacting = false;
-        if (_interacting)
         {
-            if (!_interactionData.Interactable.IsInteractable)
-            {
-                return;
-            }
-
-            _interactionData.Interact();
-            _interacting = false;       
+            return;
         }
+
+        if (!_interactionData.Interactable.IsInteractable)
+        {
+            return;
+        }
+
+        _interactionData.Interact();
     }
 }
