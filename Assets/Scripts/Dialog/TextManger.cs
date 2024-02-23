@@ -11,8 +11,8 @@ public class TextManger : MonoBehaviour
 
     List<Message> Dialogmessages;
 
-    [SerializeField]GameObject _player;
-    [SerializeField]GameObject _textPrefab;
+    [SerializeField] GameObject _player;
+    [SerializeField] GameObject _textPrefab;
     [SerializeField] float _dialogTxtDistance;
     [SerializeField] float _interactTxtDistnce;
     [SerializeField] Vector3 _dialogScale;
@@ -22,34 +22,44 @@ public class TextManger : MonoBehaviour
     {
         if (instance != null)
         {
+            Debug.Log(".");
             Destroy(gameObject);
+           
         }
         else
         {
             instance = this;
+            Debug.Log("..");
             DontDestroyOnLoad(gameObject);
         }
     }
     private void Start()
     {
-        LoadDialog();
+        Dialogmessages = new List<Message>();
         _dialogScale = _textPrefab.transform.localScale;
+        LoadDialog();
+       
+       
     }
     private void LoadDialog()
     {
         string[] script = File.ReadAllLines("Assets/Resources/Reaper_Dialoge.txt");
         int count = 1;
-        /*foreach(Message msg in Dialogmessages)
+        foreach (string str in script)
         {
+            Message msg = new Message();
             msg.audioName = $"{count}";
-            msg.message = script[count-1];
+            msg.message = str;
+            msg.messageNo = count;
             Dialogmessages.Add(msg);
             count++;
-        } */
+        }
     }
     public void PlayMessage(int messageNo)
     {
+       
         ShowDialogText(Dialogmessages[messageNo]?.message);
+        
         AudioManager.instance.Play(AudioType.Dialog, Dialogmessages[messageNo]?.audioName);
     }
     public void ShowDialogText(string message)

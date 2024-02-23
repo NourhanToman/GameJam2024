@@ -340,7 +340,7 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 07e1c03d009cb824783726d8dbb688bb, type: 3}
   - _clipName: 3
     type: 2
-    _clip: {fileID: 8300000, guid: 07e1c03d009cb824783726d8dbb688bb, type: 3}
+    _clip: {fileID: 8300000, guid: a6e1757b7418a0348a4d42390b3f4539, type: 3}
   - _clipName: 4
     type: 2
     _clip: {fileID: 8300000, guid: a47fdd8c0995f6247a91863943b0a0e0, type: 3}
@@ -356,6 +356,9 @@ MonoBehaviour:
   - _clipName: 8
     type: 2
     _clip: {fileID: 8300000, guid: 25545371ad2717b4eba2a6fc1ceb5a21, type: 3}
+  - _clipName: 9
+    type: 2
+    _clip: {fileID: 8300000, guid: 88dbb3ad6e6c10641b2cbb2c749308a9, type: 3}
   - _clipName: 10
     type: 2
     _clip: {fileID: 8300000, guid: 158a473836738454e90c3e29267382ae, type: 3}

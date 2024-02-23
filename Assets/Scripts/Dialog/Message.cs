@@ -1,7 +1,7 @@
 [System.Serializable]
 public class Message
 {
-    public string messageNo;
+    public int messageNo;
     public string audioName;
     public string message;
 }
