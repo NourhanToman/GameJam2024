@@ -92,10 +92,15 @@ public class PlayerStates : MonoBehaviour
 
         if (isDrowning)
         {
-            _currentHealth = Mathf.Lerp(_maxHealth, _currentHealth, Time.deltaTime*0.05f);
+            _currentHealth = Mathf.Lerp(_maxHealth, _currentHealth, Time.deltaTime);
             if (vignette != null)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime*0.05f); 
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime); 
+            }
+
+            if (vignette.intensity.value == 1)
+            {
+                GameManager.Instance.UpdateGameState(GameStates.Trail);
             }
         }
 
@@ -109,8 +114,6 @@ public class PlayerStates : MonoBehaviour
         {
             
             isDrowning = true;
-
-            Debug.Log("dROWN");
         }
     }
 
