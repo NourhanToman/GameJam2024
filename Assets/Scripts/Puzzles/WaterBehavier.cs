@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterBehavier : MonoBehaviour
+public class WaterBehavier : InteractableBase
 {
     [SerializeField] Transform waterTransform;
     [SerializeField] float risingDuration;
@@ -12,10 +12,15 @@ public class WaterBehavier : MonoBehaviour
     private bool isRising;
     private bool isLowering;
 
-    void Start()
+    private void Start()
     {
         lowerWaterLevel = transform.position.y;
         Rise();
+    }
+    public override void OnInteract()
+    {
+        lowerWaterLevel = transform.position.y;
+        Lower();
     }
     void Update()
     {

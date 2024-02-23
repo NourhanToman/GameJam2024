@@ -3,22 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bedroom : MonoBehaviour
+public class BedroomRoom : MonoBehaviour
 {
-
     [SerializeField] GameObject portal;
     [SerializeField] GameObject mirror;
     [SerializeField] float PortalwaitTime = 10;
     [SerializeField] GameObject player;
-    public static Bedroom instance;
+    public static BedroomRoom instance;
     AudioClip clip;
     public bool BookOpen = false;
     public bool PortalOpen = false;
-   
 
     private void Awake()
     {
-
         if (instance != null)
         {
             Destroy(gameObject);
@@ -38,16 +35,14 @@ public class Bedroom : MonoBehaviour
     }
 
     private IEnumerator DelaySound(float length, AudioType type, string name)
-    {        
-            yield return new WaitForSeconds(length);
-            AudioManager.instance.Play( type, name);
-            if (BookOpen)
-             {
-                 SetRequired(roomsRequirments.portal);
-             }
-            
+    {
+        yield return new WaitForSeconds(length);
+        AudioManager.instance.Play(type, name);
+        if (BookOpen)
+        {
+            SetRequired(roomsRequirments.portal);
+        }
     }
-
     public void SetRequired(roomsRequirments room)
     {
         if (!BookOpen || !PortalOpen)
@@ -66,7 +61,6 @@ public class Bedroom : MonoBehaviour
             }
         }
     }
-
     private IEnumerator StartPortal()
     {
         yield return new WaitForSeconds(PortalwaitTime);

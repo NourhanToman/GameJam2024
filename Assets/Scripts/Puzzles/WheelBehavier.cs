@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelBehavier : MonoBehaviour
+public class WheelBehavier :InteractableBase
 {
     [SerializeField] float rotationDuration;
     [SerializeField] Quaternion rotatingVector;
@@ -17,7 +17,7 @@ public class WheelBehavier : MonoBehaviour
     {
         
     }
-    void Rotate()
+    public override void OnInteract()
     {
         StartCoroutine("StartRotating");
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7256910100562245665}
   m_Layer: 0
   m_Name: objTextPrefab
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeStep: 0.07
   destroyTime: 0.5
+  keepText: 0
