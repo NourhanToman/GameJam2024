@@ -3,22 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelBehavier :InteractableBase
+public class WheelBehavier : InteractableBase
 {
     [SerializeField] float rotationDuration;
     [SerializeField] Quaternion rotatingVector;
     private bool isRotating;
-
-    void Start()
-    {
-       
-    }
-    void Update()
-    {
-        
-    }
     public override void OnInteract()
     {
+        base.OnInteract();
         StartCoroutine("StartRotating");
     }
     private IEnumerator StartRotating()

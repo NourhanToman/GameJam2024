@@ -14,12 +14,13 @@ public class WaterBehavier : InteractableBase
 
     private void Start()
     {
-        lowerWaterLevel = transform.position.y;
+        lowerWaterLevel = waterTransform.position.y;
         Rise();
     }
     public override void OnInteract()
     {
-        lowerWaterLevel = transform.position.y;
+        base.OnInteract();
+        lowerWaterLevel = waterTransform.position.y;
         Lower();
     }
     void Update()
@@ -47,7 +48,7 @@ public class WaterBehavier : InteractableBase
         while (counter < risingDuration)
         {
             counter += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,highWaterLevel, transform.position.z), counter / risingDuration);
+            waterTransform.position = Vector3.Lerp(waterTransform.position, new Vector3(waterTransform.position.x,highWaterLevel, waterTransform.position.z), counter / risingDuration);
             yield return null;
         }
         isLowering = false;
@@ -65,7 +66,7 @@ public class WaterBehavier : InteractableBase
         while (counter < loweringDuration)
         {
             counter += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,lowerWaterLevel,transform.position.z), counter / loweringDuration);
+            waterTransform.position = Vector3.Lerp(waterTransform.position, new Vector3(waterTransform.position.x,lowerWaterLevel,waterTransform.position.z), counter / loweringDuration);
             yield return null;
         }
         isLowering = false;
