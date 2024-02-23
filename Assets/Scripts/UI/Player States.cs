@@ -96,7 +96,7 @@ public class PlayerStates : MonoBehaviour
             _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime); 
             if (vignette != null)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime);
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime*0.1f);
             }
         }
 
@@ -104,7 +104,7 @@ public class PlayerStates : MonoBehaviour
         {    
             if (vignette != null)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime); 
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime*0.1f); 
             }
 
             Debug.Log(_currentHealth);

@@ -4,6 +4,8 @@ public class PasscodePuzzle : InteractableBase
     [SerializeField] private string passcodeAnswer;
     [SerializeField] private string playerInput;
     [SerializeField] private Transform puzzleSpawner;
+    [SerializeField] private GameObject portal;
+    [SerializeField] private CamShake camshake;
     public bool isSolved;
     private bool isActive = false;
 
@@ -32,15 +34,15 @@ public class PasscodePuzzle : InteractableBase
     {
         if (isActive)
         {
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                isY = true;
+                isT = true;
             }
-            if (isY)
+            if (isT)
             {
-                if (Input.GetKeyDown(KeyCode.T))
+                if (Input.GetKeyDown(KeyCode.Y))
                 {
-                    isT = true;
+                    isY = true;
                 }
                 if (isT)
                 {
@@ -52,6 +54,8 @@ public class PasscodePuzzle : InteractableBase
             }
             if(isSolved) 
             { 
+                portal.SetActive(true);
+                camshake.enabled = false;
                 StopPuzzle();
             }
         }
