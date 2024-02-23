@@ -25,14 +25,14 @@ public class TrailRoom : MonoBehaviour
             {
                 TextManger.instance.PlayMessage(0);
                 isDialogStarted = true;
-                nextClip = AudioManager.instance.GetClip(AudioType.Dialog, "0");
+                nextClip = AudioManager.instance.GetClip(AudioType.Dialog, "1");
                 StartCoroutine(StartHint());
             }
         }
     }
     private IEnumerator StartHint()
     {
-        yield return new WaitForSeconds(nextClip.length);
+        yield return new WaitForSeconds(nextClip.length + 8f);
         TextManger.instance.PlayMessage(1);
 
     }
