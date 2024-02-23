@@ -128,7 +128,7 @@ namespace StarterAssets
             }
         }
 
-
+        
         private void Awake()
         {
             // get a reference to our main camera
@@ -354,7 +354,7 @@ namespace StarterAssets
         {
             isInteracting = true;
             _interactEvent?.Invoke();
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(0.3f);
             isInteracting = false;
             _input.interact = false;
         }
