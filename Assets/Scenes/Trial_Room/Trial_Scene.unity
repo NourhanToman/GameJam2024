@@ -6039,12 +6039,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68dc755e7f949c43ab2ed23f25e4c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1533295192}
+  _player: {fileID: 172165653}
   _textPrefab: {fileID: 3602208596672464880, guid: df8d59d5cf6f2414eadcb35f0b44c743,
     type: 3}
-  _dialogTxtDistance: 2
+  _dialogTxtDistance: 5
   _interactTxtDistnce: 0.5
-  _dialogScale: {x: 1, y: 1, z: 1}
+  _dialogScale: {x: 0.001, y: 0.001, z: 0.001}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &1090613984
 GameObject:
@@ -6519,17 +6519,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05e52e1e6f142494f818644d5e0ad335,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05e52e1e6f142494f818644d5e0ad335,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05e52e1e6f142494f818644d5e0ad335,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05e52e1e6f142494f818644d5e0ad335,
         type: 3}
@@ -7116,12 +7116,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1533295192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4001227915822776106, guid: 665c4a9f5e945b746819c23f091ecdb9,
-    type: 3}
-  m_PrefabInstance: {fileID: 172165652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1561347858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7524111205263903965, guid: 601834c64f910c74481544dabac65965,

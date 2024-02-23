@@ -17,6 +17,7 @@ public class TextManger : MonoBehaviour
     [SerializeField] float _interactTxtDistnce;
     [SerializeField] Vector3 _dialogScale;
     [SerializeField] Vector3 _interactableTxtScale;
+    
 
     void Awake()
     {
@@ -64,8 +65,8 @@ public class TextManger : MonoBehaviour
     }
     public void ShowDialogText(string message)
     {
-        Vector3 playerForward = _player.transform.forward;
-        GameObject messageObj = Instantiate(_textPrefab, playerForward + new Vector3(0,0,_dialogTxtDistance) , Quaternion.identity);
+        Vector3 playerForward = _player.transform.forward.normalized;
+        GameObject messageObj = Instantiate(_textPrefab, new Vector3(_player.transform.position.x, _player.transform.position.y, _player.transform.position.z + _dialogTxtDistance) , _textPrefab.transform.rotation,_player.transform);
 
         messageObj.transform.localScale = _dialogScale;
         messageObj.GetComponent<TextMeshPro>().text = message;
