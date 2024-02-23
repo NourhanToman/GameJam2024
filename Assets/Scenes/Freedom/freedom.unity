@@ -559,81 +559,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.1078067, y: 0.16564636, z: 3.1078076}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &85210918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3620676422289897918, guid: 665c4a9f5e945b746819c23f091ecdb9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1099191308}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &85210919
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85210918}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.10721016
-  m_Center: {x: 0, y: 1.7107983, z: 0}
---- !u!114 &85210920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85210918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a728310d54f0a459a9577199675ea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 1099191315}
-  _currentHealth: 0
-  _maxHealth: 100
-  _currentOxygenPercent: 0
-  _maxOxygenPercent: 100
-  _oxygenDecreasedRate: 1
-  _oxygenTimer: 100
-  _decreaseInterval: 1
-  _outOfAirDamage: 5
---- !u!54 &85210922
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85210918}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &109409758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2449,7 +2374,6 @@ GameObject:
   - component: {fileID: 512777808}
   - component: {fileID: 512777807}
   - component: {fileID: 512777806}
-  - component: {fileID: 512777805}
   m_Layer: 0
   m_Name: Pool
   m_TagString: Water
@@ -2457,25 +2381,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &512777805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512777804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ddb383c270a42419c1ac8187c442cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _multipleUse: 0
-  _isInteractable: 1
-  _tooltipMessage: interact
-  waterTransform: {fileID: 512777808}
-  risingDuration: 5000
-  loweringDuration: 2500
-  highWaterLevel: 10
 --- !u!65 &512777806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6864,23 +6769,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: NestedParent_Unpack
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9, type: 3}
+    - target: {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _pool
+      value: 
+      objectReference: {fileID: 512777804}
+    - target: {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1099191315}
+    - target: {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _outOfAirDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _decreaseInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191701572212861244, guid: 665c4a9f5e945b746819c23f091ecdb9,
+        type: 3}
+      propertyPath: _oxygenDecreasedRate
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3620676422289897918, guid: 665c4a9f5e945b746819c23f091ecdb9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 85210920}
-    - targetCorrespondingSourceObject: {fileID: 3620676422289897918, guid: 665c4a9f5e945b746819c23f091ecdb9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 85210919}
-    - targetCorrespondingSourceObject: {fileID: 3620676422289897918, guid: 665c4a9f5e945b746819c23f091ecdb9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 85210922}
     - targetCorrespondingSourceObject: {fileID: 8044530110265448576, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
       insertIndex: -1
@@ -8656,7 +8573,7 @@ GameObject:
   - component: {fileID: 1501121152}
   - component: {fileID: 1501121153}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Lower Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
