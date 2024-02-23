@@ -5,11 +5,11 @@ using UnityEngine;
 public class PasscodePuzzle : MonoBehaviour
 {
     [SerializeField] string passcodeAnswer;
+    public bool isSolved;
+    [SerializeField] InteractableObjText puzzleTxt;
 
     public void StartPuzzle()
     {
-        InteractableObjText puzzleTxt;
 
-       // TextManger.instance.ShowInteractableText();
     }
 }

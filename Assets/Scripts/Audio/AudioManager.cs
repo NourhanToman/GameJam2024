@@ -75,7 +75,7 @@ public class AudioManager : MonoBehaviour
         MuteType(AudioType.Dialog);
     }
 
-    private AudioClip GetClip(AudioType type, string name)
+    public AudioClip GetClip(AudioType type, string name)
     {
         List<Clip> audioList = null;
         switch (type)
@@ -98,4 +98,21 @@ public class AudioManager : MonoBehaviour
         }
         return null;
     }
+
+    public void Play(AudioType type, AudioClip clip)
+    {
+        switch (type)
+        {
+            case AudioType.SFX:
+                SFX.PlayOneShot(clip);
+                break;
+
+            case AudioType.Music:
+                Music.PlayOneShot(clip);
+                break;
+        }
+
+    }
+
+
 }
