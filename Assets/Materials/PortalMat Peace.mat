@@ -85,7 +85,7 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EmitionIntensty: -0.06
+    - _EmitionIntensty: 4.74
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
@@ -96,7 +96,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _Speed: 0.1
+    - _Speed: 0.01
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
