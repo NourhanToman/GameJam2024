@@ -3,14 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public enum RoomReq
-{
-    book,
-    portal
-}
-
 public class Bedroom : MonoBehaviour
 {
 
@@ -51,23 +43,23 @@ public class Bedroom : MonoBehaviour
             AudioManager.instance.Play( type, name);
             if (BookOpen)
              {
-                 SetRequired(RoomReq.portal);
+                 SetRequired(roomsRequirments.portal);
              }
             
     }
 
-    public void SetRequired(RoomReq room)
+    public void SetRequired(roomsRequirments room)
     {
         if (!BookOpen || !PortalOpen)
         {
             switch (room)
             {
-                case RoomReq.book:
+                case roomsRequirments.book:
                     BookOpen = true;
                     StartCoroutine(DelaySound(clip.length, AudioType.SFX, "Player2"));
 
                     break;
-                case RoomReq.portal:
+                case roomsRequirments.portal:
                     PortalOpen = true;
                     StartCoroutine(StartPortal());
                     break;

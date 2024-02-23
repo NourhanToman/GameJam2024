@@ -6,5 +6,5 @@ using UnityEngine;
 public class InteractableObjText : ScriptableObject
 {
     public string messageText;
-    public RoomReq roomReq;
+    public roomsRequirments roomReq;
 }
