@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum roomsRequirments
 {
@@ -41,18 +42,23 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.Bedroom:
                 SceneManager.LoadScene(1);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Trail:
                 SceneManager.LoadScene(2);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Justice:
                 SceneManager.LoadScene(3);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
                 SceneManager.LoadScene(5);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
                 SceneManager.LoadScene(4);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Win:
                 break;
