@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;

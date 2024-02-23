@@ -977,7 +977,7 @@
         "popupEntries": []
     },
     "m_SerializedDiffusionProfile": "",
-    "m_Version": 0
+    "m_Version": 1
 }
 
 {
@@ -1547,9 +1547,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.5566037893295288,
+        "y": 0.43845677375793459,
+        "z": 0.43845677375793459
     },
     "m_DefaultValue": {
         "x": 0.0,
