@@ -25,7 +25,6 @@ public class BedroomRoom : MonoBehaviour
             instance = this;
         }
     }
-
     void Start()
     {
         player.GetComponent<CustomThirdPersonController>().MoveSpeed = 2.5f;
@@ -33,7 +32,6 @@ public class BedroomRoom : MonoBehaviour
         AudioManager.instance.Play(AudioType.SFX, clip);
         StartCoroutine(DelaySound(clip.length,AudioType.SFX, "Player1"));
     }
-
     private IEnumerator DelaySound(float length, AudioType type, string name)
     {
         yield return new WaitForSeconds(length);

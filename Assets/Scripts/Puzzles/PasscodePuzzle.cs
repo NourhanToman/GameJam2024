@@ -29,7 +29,7 @@ public class PasscodePuzzle : InteractableBase
     }
     private void DisplayPuzzleText()
     {
-        TextManger.instance.ShowInteractableText(puzzleSpawner, "Enter The Password: ", 0.5f);
+        TextManger.instance.ShowInteractableText(puzzleSpawner, $"Enter The Password:+{new string('*', playerInput.Length)} ", 0.5f);
         TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
     }
     public void Update()
@@ -38,12 +38,17 @@ public class PasscodePuzzle : InteractableBase
         {
             if(Input.GetKeyDown(KeyCode.Backspace) && playerInput.Length > 0) 
             {
-                playerInput.Remove(playerInput.Length - 1 , 1);
+                Debug.Log("deleted" + playerInput);
+                playerInput = playerInput.Substring(0, playerInput.Length - 1);
                 editDisplayedChar();
             }
-            else if (playerInput.Length < passcodeAnswer.Length)
+
+            if (playerInput.Length < passcodeAnswer.Length)
             {
+                Debug.Log("added" + playerInput);
                 playerInput += GetKeyPressed();
+                Debug.Log("added" + playerInput);
+
                 editDisplayedChar();
             }
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -52,14 +57,16 @@ public class PasscodePuzzle : InteractableBase
             }
             if (Input.GetKeyDown(KeyCode.KeypadEnter))
             {
-                if(playerInput == passcodeAnswer){
+                Debug.Log("com" + playerInput);
+                Debug.Log("com" + passcodeAnswer);
+
+                if (playerInput == passcodeAnswer){
                     isSolved = true;
                     StopPuzzle();
                 }
             }
         }
     }
-
     private void StopPuzzle()
     {
         isActive = false;
@@ -76,7 +83,6 @@ public class PasscodePuzzle : InteractableBase
             TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
            // BedroomRoom.instance.SetRequired(TXT.roomReq); for room implementation IMP
         }
-
     }
     char GetKeyPressed()
     {

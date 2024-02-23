@@ -910,7 +910,7 @@ MonoBehaviour:
   _multipleUse: 0
   _isInteractable: 1
   _tooltipMessage: interact
-  passcodeAnswer: E
+  passcodeAnswer: AHLA
   playerInput: 
   puzzleSpawner: {fileID: 954658510}
   isSolved: 0
