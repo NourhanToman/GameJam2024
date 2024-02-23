@@ -1413,6 +1413,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0.66
   m_ShadowAngle: 0
+--- !u!1 &233875028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233875030}
+  - component: {fileID: 233875029}
+  m_Layer: 0
+  m_Name: TrialRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &233875029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233875028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ca774f7df54ce41b6ca063897773f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReaperDistance: 20
+--- !u!4 &233875030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233875028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.872921, y: 2.7162092, z: -686.31537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248357343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -253786545196755511, guid: 601834c64f910c74481544dabac65965,
@@ -6122,7 +6167,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1060931189}
   - component: {fileID: 1060931188}
-  - component: {fileID: 1060931190}
   - component: {fileID: 1060931191}
   m_Layer: 0
   m_Name: GameObject (1)
@@ -6159,19 +6203,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060931190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060931187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ca774f7df54ce41b6ca063897773f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReaperDistance: 10
 --- !u!114 &1060931191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8981,3 +9012,4 @@ SceneRoots:
   - {fileID: 172165652}
   - {fileID: 1445296672}
   - {fileID: 1520685996}
+  - {fileID: 233875030}
