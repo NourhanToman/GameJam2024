@@ -8,6 +8,7 @@ TagManager:
   - Scanner
   - Reaper
   - Dialog
+  - Text
   layers:
   - Default
   - TransparentFX

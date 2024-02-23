@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 860819534142763627}
   m_Layer: 0
   m_Name: DialogTextPrefab
-  m_TagString: Dialog
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeStep: 0.1
   destroyTime: 0.5
+  keepText: 0

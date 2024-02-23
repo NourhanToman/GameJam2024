@@ -5,44 +5,34 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class Trailroom : MonoBehaviour
+public class TrailRoom : MonoBehaviour
 {
-
-   
-    [SerializeField] int ReaperDistance= 10;
-    private bool isDialoge = false;
+    [SerializeField] int ReaperDistance= 20;
+    private bool isDialogStarted = false;
     private float hitWaitTime = 20f;
+    AudioClip nextClip;
     void Start()
     {
-        StartCoroutine(StartHint());
     }
 
-    // Update is called once per frame
     void Update()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-
-    
         RaycastHit hit;
-
-
-        if (!isDialoge && Physics.Raycast(ray, out hit, ReaperDistance))
+        if (!isDialogStarted && Physics.Raycast(ray, out hit, ReaperDistance))
         {
             if (hit.collider.CompareTag("Reaper"))
             {
-
                 TextManger.instance.PlayMessage(0);
-                isDialoge = true;
-
+                isDialogStarted = true;
+                nextClip = AudioManager.instance.GetClip(AudioType.Dialog, "0");
+                StartCoroutine(StartHint());
             }
         }
-
     }
-
-
     private IEnumerator StartHint()
     {
-        yield return new WaitForSeconds(hitWaitTime);
+        yield return new WaitForSeconds(nextClip.length);
         TextManger.instance.PlayMessage(1);
 
     }

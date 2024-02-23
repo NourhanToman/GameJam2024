@@ -20,26 +20,31 @@ public class PasscodePuzzle : InteractableBase
         isActive = true;
         if (!isSolved)
         {
-            TextManger.instance.ShowInteractableText(puzzleSpawner, "Enter The Password: ", 0.5f);
-            TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
+            DisplayPuzzleText();
         }
         else
         {
             TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
         }
     }
+    private void DisplayPuzzleText()
+    {
+        TextManger.instance.ShowInteractableText(puzzleSpawner, "Enter The Password: ", 0.5f);
+        TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
+    }
     public void Update()
     {
         if (isActive)
         {
-            if (playerInput.Length < passcodeAnswer.Length)
+            if(Input.GetKeyDown(KeyCode.Backspace) && playerInput.Length > 0) 
+            {
+                playerInput.Remove(playerInput.Length - 1 , 1);
+                editDisplayedChar();
+            }
+            else if (playerInput.Length < passcodeAnswer.Length)
             {
                 playerInput += GetKeyPressed();
                 editDisplayedChar();
-            }
-            if(Input.GetKeyDown(KeyCode.Backspace)) 
-            {
-                playerInput.Remove(playerInput.Length - 1);
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -69,11 +74,10 @@ public class PasscodePuzzle : InteractableBase
         if(isSolved)
         {
             TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
-           // Bedroom.instance.SetRequired(TXT.roomReq); for room implementation IMP
+           // BedroomRoom.instance.SetRequired(TXT.roomReq); for room implementation IMP
         }
 
     }
-
     char GetKeyPressed()
     {
         foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
@@ -98,7 +102,6 @@ public class PasscodePuzzle : InteractableBase
                 Destroy(child.gameObject);
             }
         }
-        TextManger.instance.ShowInteractableText(puzzleSpawner, "Enter The Password: ", 0.5f);
-        TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
+        DisplayPuzzleText();
     }
 }
