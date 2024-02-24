@@ -2954,6 +2954,64 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.1078067, y: 0.16564651, z: 0.39388123}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &591828392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591828394}
+  - component: {fileID: 591828393}
+  m_Layer: 0
+  m_Name: arrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &591828393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591828392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19d9143a39eb3b46bc4563e9889cfbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: d3fee60163ec6b14e85a4dff17c5e73a, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_AffectsTransparency: 0
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7, y: 7, z: 1}
+  m_FadeFactor: 1
+  m_Version: 2
+--- !u!4 &591828394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591828392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7005854, w: 0.7135686}
+  m_LocalPosition: {x: 2.89, y: -0.85, z: 7.07}
+  m_LocalScale: {x: 4.296901, y: 4.2969007, z: 4.296901}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 88.948}
 --- !u!1 &592471688
 GameObject:
   m_ObjectHideFlags: 0
@@ -12966,6 +13024,7 @@ SceneRoots:
   - {fileID: 1604469575}
   - {fileID: 2100053893}
   - {fileID: 394147243}
+  - {fileID: 591828394}
   - {fileID: 406080035}
   - {fileID: 203620286}
   - {fileID: 368024199}
