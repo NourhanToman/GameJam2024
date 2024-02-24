@@ -14,6 +14,9 @@ public class BedroomRoom : MonoBehaviour
     public bool BookOpen = false;
     public bool PortalOpen = false;
 
+    [SerializeField] GameObject PausePanel;
+
+
     private void Awake()
     {
         if (instance != null)
@@ -27,6 +30,7 @@ public class BedroomRoom : MonoBehaviour
     }
     void Start()
     {
+        PausePanel.SetActive(false);
         player.GetComponent<CustomThirdPersonController>().MoveSpeed = 2.5f;
         clip = AudioManager.instance.GetClip(AudioType.SFX, "Paper");
         AudioManager.instance.Play(AudioType.SFX, clip);
@@ -69,6 +73,16 @@ public class BedroomRoom : MonoBehaviour
 
     void Update()
     {
-       
+       if(Input.GetKeyDown(KeyCode.Escape)) {
+
+            if (PausePanel.gameObject.activeSelf)
+            {
+                PausePanel.gameObject.SetActive(false);
+            }
+            else
+            {
+                PausePanel.gameObject.SetActive(true);
+            }
+        }
     }
 }

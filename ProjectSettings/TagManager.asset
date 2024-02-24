@@ -10,6 +10,8 @@ TagManager:
   - Dialog
   - Text
   - Water
+  - Fire
+  - Hint
   layers:
   - Default
   - TransparentFX

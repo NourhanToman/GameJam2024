@@ -10,6 +10,8 @@ public class WheelBehavier : InteractableBase
     [SerializeField] Quaternion rotatingVector;
     private bool isRotating;
     public UnityEvent lowerWATER;
+
+    public GameObject portal;
     public override void OnInteract()
     {
         base.OnInteract();
@@ -35,5 +37,7 @@ public class WheelBehavier : InteractableBase
            yield return null;
         }
         isRotating = false;
+        portal.gameObject.SetActive(true);
+        
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using static UnityEngine.Rendering.DebugUI;
 
 public class TextManger : MonoBehaviour
@@ -55,7 +56,8 @@ public class TextManger : MonoBehaviour
     }
     private void LoadDialog()
     {
-        string[] script = File.ReadAllLines("Assets/Resources/Reaper_Dialoge.txt");
+        UnityEngine.TextAsset textAsset = Resources.Load<UnityEngine.TextAsset>("Reaper_Dialoge");
+        string[] script = textAsset.text.Split('\n');
         int count = 1;
         foreach (string str in script)
         {
@@ -97,7 +99,7 @@ public class TextManger : MonoBehaviour
     public void ShowInteractableText(Transform interactable, string message , float offSet)
     {
 
-        GameObject messageObj = Instantiate(_InteractablePrefab, new Vector3(0, offSet, 0), Quaternion.identity , interactable);
+        GameObject messageObj = Instantiate(_InteractablePrefab, interactable.transform.position+ new Vector3(0, offSet, 0), Quaternion.identity);
 
         messageObj.transform.localScale = _interactableTxtScale;
         messageObj.GetComponent<TextMeshPro>().text = message;

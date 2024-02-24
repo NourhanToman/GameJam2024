@@ -1,22 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
 public class PasscodePuzzle : InteractableBase
 {
-    [SerializeField] string passcodeAnswer;
-    [SerializeField] string playerInput;
-    [SerializeField] Transform puzzleSpawner;
+    [SerializeField] private string passcodeAnswer;
+    [SerializeField] private string playerInput;
+    [SerializeField] private Transform puzzleSpawner;
+    [SerializeField] private GameObject portal;
+    [SerializeField] private CamShake camshake;
     public bool isSolved;
     private bool isActive = false;
-    [SerializeField] InteractableObjText puzzleSolveText;
+
+    bool isY;
+    bool isT;
+    bool isV;
 
     public override void OnInteract()
     {
         base.OnInteract();
-
         isActive = true;
         if (!isSolved)
         {
@@ -24,53 +23,46 @@ public class PasscodePuzzle : InteractableBase
         }
         else
         {
-            TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
         }
     }
     private void DisplayPuzzleText()
     {
-        TextManger.instance.ShowInteractableText(puzzleSpawner, $"Enter The Password:+{new string('*', playerInput.Length)} ", 0.5f);
-        TextManger.instance.ShowInteractableText(puzzleSpawner, playerInput, 0.3f);
+        TextManger.instance.ShowInteractableText(transform, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.2f);
     }
     public void Update()
     {
         if (isActive)
         {
-            if(Input.GetKeyDown(KeyCode.Backspace) && playerInput.Length > 0) 
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                Debug.Log("deleted" + playerInput);
-                playerInput = playerInput.Substring(0, playerInput.Length - 1);
-                editDisplayedChar();
+                isT = true;
             }
-
-            if (playerInput.Length < passcodeAnswer.Length)
+            if (isT)
             {
-                Debug.Log("added" + playerInput);
-                playerInput += GetKeyPressed();
-                Debug.Log("added" + playerInput);
-
-                editDisplayedChar();
-            }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                StopPuzzle();
-            }
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                Debug.Log("com" + playerInput);
-                Debug.Log("com" + passcodeAnswer);
-
-                if (playerInput == passcodeAnswer){
-                    isSolved = true;
-                    StopPuzzle();
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    isY = true;
                 }
+                if (isT)
+                {
+                    if (Input.GetKeyDown(KeyCode.V))
+                    {
+                        isSolved = true;
+                    }
+                }
+            }
+            if(isSolved) 
+            { 
+                portal.SetActive(true);
+                camshake.enabled = false;
+                StopPuzzle();
             }
         }
     }
     private void StopPuzzle()
     {
         isActive = false;
-        playerInput = "";
         foreach (Transform child in transform)
         {
             if (child.gameObject.CompareTag("Text"))
@@ -78,36 +70,9 @@ public class PasscodePuzzle : InteractableBase
                 Destroy(child.gameObject);
             }
         }
-        if(isSolved)
+        if (isSolved)
         {
-            TextManger.instance.ShowInteractableText(transform, puzzleSolveText);
-           // BedroomRoom.instance.SetRequired(TXT.roomReq); for room implementation IMP
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
         }
-    }
-    char GetKeyPressed()
-    {
-        foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKeyDown(keyCode))
-            {
-                char pressedChar = keyCode.ToString()[0];
-                if (char.IsLetterOrDigit(pressedChar))
-                {
-                      return pressedChar;
-                }
-            }
-        }
-        return '\0';
-    }
-    private void editDisplayedChar()
-    {
-        foreach(Transform child in transform)
-        {
-            if (child.gameObject.CompareTag("Text"))
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        DisplayPuzzleText();
     }
 }
