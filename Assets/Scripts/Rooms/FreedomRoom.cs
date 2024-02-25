@@ -20,14 +20,14 @@ public class FreedomRoom : MonoBehaviour
     private IEnumerator PlayerSecondVerse()
     {
         yield return new WaitForSeconds(10f);
-        TextManger.instance.PlayMessage(9);
+        TextManger.instance.PlayMessage(6);
         
     }
 
     private IEnumerator PlayerFirstVerse()
     {
         yield return new WaitForSeconds(5f);
-        TextManger.instance.PlayMessage(8);
+        TextManger.instance.PlayMessage(5);
     }
 }
 
