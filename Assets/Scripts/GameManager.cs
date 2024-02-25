@@ -9,13 +9,23 @@ public enum roomsRequirments
     portal,
     box
 }
+
+public enum RoomsAttempts
+{   
+    freedomONE,
+    freedomTWO,
+    peaceONE,
+    peaceTWO,
+    peaceTHREE
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameStates state;
-    [HideInInspector] public int FreedomNoOfVisits = 0;
+    public RoomsAttempts attempts;
+   /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
-    [HideInInspector] public int JusticeNoOfVisits = 0;
+    [HideInInspector] public int JusticeNoOfVisits = 0;*/
     private void Awake()
     {
 
@@ -32,9 +42,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         state = GameStates.Bedroom;
+        attempts = RoomsAttempts.freedomONE;
         
     }
-   public void UpdateGameState(GameStates states)
+    private void Update()
+    {
+     
+     
+    }
+    public void UpdateGameState(GameStates states)
     {
         state = states;
 
@@ -49,17 +65,17 @@ public class GameManager : MonoBehaviour
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Justice:
-                JusticeNoOfVisits++;
+               /// JusticeNoOfVisits++;
                 SceneManager.LoadScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
-                PeaceNoOfVisits++;
+                //PeaceNoOfVisits++;
                 SceneManager.LoadScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
-                FreedomNoOfVisits++;
+                //FreedomNoOfVisits++;
                 SceneManager.LoadScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;

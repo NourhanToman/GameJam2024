@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class FreedomRoom : MonoBehaviour
 {
+    private bool isSolved = false;
+    public GameObject portal;
+
     private void Start()
     {
-        if(GameManager.Instance.FreedomNoOfVisits <= 1)
+        portal.SetActive(false);
+        if(GameManager.Instance.attempts == RoomsAttempts.freedomONE)
         {
             StartCoroutine(PlayerFirstVerse());
         }
-        if (GameManager.Instance.FreedomNoOfVisits >1)
+        if (GameManager.Instance.attempts == RoomsAttempts.freedomTWO)
         {
             StartCoroutine(PlayerSecondVerse());
         }
@@ -28,6 +32,24 @@ public class FreedomRoom : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         TextManger.instance.PlayMessage(5);
+    }
+
+
+    public void SetRequired(roomsRequirments room)
+    {
+        if (isSolved)
+        {
+            switch (room)
+            {
+                case roomsRequirments.box:
+                    isSolved = true;
+                    break;
+                case roomsRequirments.portal:
+                    portal.SetActive (true);
+                    //remove chains
+                    break;
+            }
+        }
     }
 }
 
