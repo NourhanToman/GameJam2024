@@ -12,6 +12,7 @@ public class WheelBehavier : InteractableBase
     public UnityEvent lowerWATER;
 
     public GameObject portal;
+     
     public override void OnInteract()
     {
         base.OnInteract();

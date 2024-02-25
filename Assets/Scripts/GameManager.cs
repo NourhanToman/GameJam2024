@@ -4,20 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public enum RoomsAttempts
+{
+    freedomONE,
+    freedomTWO,
+    peaceONE,
+    peaceTWO,
+    peaceTHREE
+}
 public enum roomsRequirments
 {
     book,
-    portal,
+    FreedomPortal,
+    JusticePortal,
+    PeacePortal,
     box
 }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameStates state;
+    public RoomsAttempts attempts;
     public GameObject PauseMenuPrefab;
-    [HideInInspector] public int FreedomNoOfVisits = 0;
+   /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
-    [HideInInspector] public int JusticeNoOfVisits = 0;
+    [HideInInspector] public int JusticeNoOfVisits = 0;*/
     [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
     private bool PauseMenuExists = false;
@@ -37,7 +49,8 @@ public class GameManager : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
-        state = GameStates.Bedroom;        
+        state = GameStates.Bedroom;    
+        attempts = RoomsAttempts.freedomONE;
     }
     private void Update()
     {
@@ -67,19 +80,19 @@ public class GameManager : MonoBehaviour
                 break;
             case GameStates.Justice:
                 PauseMenuExists = false;
-                JusticeNoOfVisits++;
+                //JusticeNoOfVisits++;
                 SceneManager.LoadScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
                 PauseMenuExists = false;
-                PeaceNoOfVisits++;
+                //PeaceNoOfVisits++;
                 SceneManager.LoadScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
                 PauseMenuExists = false;
-                FreedomNoOfVisits++;
+                //FreedomNoOfVisits++;
                 SceneManager.LoadScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FreedomRoom : MonoBehaviour
 {
+    
     private bool isSolved = false;
     public GameObject portal;
 
@@ -44,7 +45,7 @@ public class FreedomRoom : MonoBehaviour
                 case roomsRequirments.box:
                     isSolved = true;
                     break;
-                case roomsRequirments.portal:
+                case roomsRequirments.FreedomPortal:
                     portal.SetActive (true);
                     //remove chains
                     break;
