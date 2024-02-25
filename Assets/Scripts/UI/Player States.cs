@@ -106,8 +106,6 @@ public class PlayerStates : MonoBehaviour
             {
                 vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime*0.1f); 
             }
-
-            Debug.Log(_currentHealth);
             if (_currentHealth <= 0)
             {
                 GameManager.Instance.UpdateGameState(GameStates.Trail);

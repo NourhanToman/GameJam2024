@@ -598,7 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a728310d54f0a459a9577199675ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1099191315}
   _currentHealth: 0
   _maxHealth: 100
   _currentOxygenPercent: 0
@@ -607,6 +606,7 @@ MonoBehaviour:
   _oxygenTimer: 100
   _decreaseInterval: 1
   _outOfAirDamage: 5
+  _pool: {fileID: 512777804}
 --- !u!54 &85210922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5528,6 +5528,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 339411465}
   m_LocalEulerAnglesHint: {x: 69.159, y: -18.351, z: 98.654}
+--- !u!1 &878066045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878066047}
+  - component: {fileID: 878066046}
+  m_Layer: 0
+  m_Name: FreedomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878066046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878066045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2b0f023f31d0d42b27a3ddb844ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &878066047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878066045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.21083, y: 3.083024, z: -685.3288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &881391772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5692,6 +5736,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  portal: {fileID: 0}
 --- !u!114 &893332514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7137,12 +7182,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 717dbc9597e2b53489fad3a53b428ed5, type: 2}
---- !u!20 &1099191315 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6838064160591996443, guid: 665c4a9f5e945b746819c23f091ecdb9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1099191308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1145623004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13028,3 +13067,4 @@ SceneRoots:
   - {fileID: 406080035}
   - {fileID: 203620286}
   - {fileID: 368024199}
+  - {fileID: 878066047}

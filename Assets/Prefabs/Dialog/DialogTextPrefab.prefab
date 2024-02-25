@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6650132386419493776}
   - component: {fileID: 8701835906280393035}
   - component: {fileID: 860819534142763627}
-  m_Layer: 0
+  - component: {fileID: -8887827233866008903}
+  m_Layer: 5
   m_Name: DialogTextPrefab
   m_TagString: Text
   m_Icon: {fileID: 0}
@@ -189,3 +190,15 @@ MonoBehaviour:
   timeStep: 0.05
   destroyTime: 0.5
   keepText: 0
+--- !u!210 &-8887827233866008903
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5239843956051376595}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0

@@ -30,7 +30,7 @@ public class TrailRoom : MonoBehaviour
     }
     private IEnumerator StartHint()
     {
-        yield return new WaitForSeconds(nextClip.length + 8f);
+        yield return new WaitForSeconds(nextClip.length + 10f);
         TextManger.instance.PlayMessage(1);
 
     }

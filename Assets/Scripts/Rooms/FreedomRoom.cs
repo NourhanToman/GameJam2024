@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FreedomRoom : MonoBehaviour
 {
-    
-    void Start()
+    private void Start()
     {
+        if(GameManager.Instance.FreedomNoOfVisits <= 1)
+        {
+            StartCoroutine(PlayerFirstVerse());
+        }
+        if (GameManager.Instance.FreedomNoOfVisits >1)
+        {
+            StartCoroutine(PlayerSecondVerse());
+        }
+    }
+
+    private IEnumerator PlayerSecondVerse()
+    {
+        yield return new WaitForSeconds(10f);
+        TextManger.instance.PlayMessage(9);
         
     }
-   
-    void Update()
+
+    private IEnumerator PlayerFirstVerse()
     {
-        
+        yield return new WaitForSeconds(5f);
+        TextManger.instance.PlayMessage(8);
     }
 }
 
