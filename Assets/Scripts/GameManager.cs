@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
         state = GameStates.Bedroom;    
         attempts = RoomsAttempts.ONE;
-        requirments = roomsRequirments.none;
+        requirments = roomsRequirments.book;
         playerState = PlayerState.NotFree;
     }
     private void Update()

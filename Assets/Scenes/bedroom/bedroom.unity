@@ -1701,6 +1701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6010144694980781158, guid: d9ce999d75a6f244ea40251376de7aa9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542034074546413681, guid: d9ce999d75a6f244ea40251376de7aa9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2339,9 +2344,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  FreedomNoOfVisits: 0
-  PeaceNoOfVisits: 0
-  JusticeNoOfVisits: 0
+  attempts: 0
+  requirments: 0
+  PauseMenuPrefab: {fileID: 6010144694980781158, guid: d9ce999d75a6f244ea40251376de7aa9,
+    type: 3}
+  playerState: 0
+  Player: {fileID: 0}
+  playerInputs: {fileID: 0}
 --- !u!4 &821820579
 Transform:
   m_ObjectHideFlags: 0
@@ -2378,7 +2387,7 @@ MonoBehaviour:
   _dialogHight: 1
   _dialogScale: {x: 0.2, y: 0.2, z: 0.2}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
-  _player: {fileID: 0}
+  _player: {fileID: 7848768905772420649}
 --- !u!1 &848308483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1399714592883382042, guid: d9ce999d75a6f244ea40251376de7aa9,

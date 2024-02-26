@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Book
   m_EditorClassIdentifier: 
   messageText: When will this nightmare end!
-  requireName: Book
+  roomReq: 1

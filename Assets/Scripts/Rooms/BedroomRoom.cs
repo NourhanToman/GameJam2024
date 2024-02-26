@@ -53,7 +53,7 @@ public class BedroomRoom : MonoBehaviour
         if (BookOpen)
         {
             Debug.Log("opened");
-            SetRequired(roomsRequirments.book);
+            SetRequired(roomsRequirments.BedroonPortal);
         }
     }
     public void SetRequired(roomsRequirments room)
