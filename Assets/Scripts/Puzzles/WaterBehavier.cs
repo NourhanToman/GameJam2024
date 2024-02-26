@@ -34,6 +34,7 @@ public class WaterBehavier : InteractableBase
     }
     public void Lower()
     {
+        
         AudioManager.instance.LoopStop(AudioType.SFX, "Water");
         StartCoroutine("startLowering");
     }

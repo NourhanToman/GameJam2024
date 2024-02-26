@@ -53,13 +53,15 @@ public class AudioManager : MonoBehaviour
         switch (type)
         {
             case AudioType.SFX:
-                SFX.PlayOneShot(GetClip(type, name));
-                SFX.loop = false;
+                SFX.Stop();
+                //SFX.PlayOneShot(GetClip(type, name));
+                //SFX.loop = false;
                 break;
 
             case AudioType.Music:
-                Music.PlayOneShot(GetClip(type, name));
-                Music.loop = false;
+                Music.Stop();
+                // Music.PlayOneShot(GetClip(type, name));
+                //Music.loop = false;
                 break;
         }
     }

@@ -7620,6 +7620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6186979962343385678}
+  - component: {fileID: 574954488222008285}
   m_Layer: 0
   m_Name: Player(Justice Room)
   m_TagString: Untagged
@@ -7635,7 +7636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9151331677126188292}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.025729956, z: -0, w: 0.99966896}
+  m_LocalRotation: {x: 0, y: -0.025731971, z: 0, w: 0.9996689}
   m_LocalPosition: {x: -1.972, y: 0.039, z: 38.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7645,6 +7646,22 @@ Transform:
   - {fileID: 6754895174735833642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.949, z: 0}
+--- !u!114 &574954488222008285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151331677126188292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57041ce523ea64245967ffb8b018c3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake: {fileID: 5240041307256443964}
+  leftchain: {fileID: 1956488511260931520}
+  rightchain: {fileID: 7635856244352348243}
+  speed: {fileID: 184382715019148820}
 --- !u!1 &9179463898295138941
 GameObject:
   m_ObjectHideFlags: 0

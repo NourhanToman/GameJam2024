@@ -5437,6 +5437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5268766754967784272}
+  - component: {fileID: 5601535209942715837}
   m_Layer: 0
   m_Name: Chained Player(Peace Room)
   m_TagString: Untagged
@@ -5452,7 +5453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045175853974406737}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.001156089, y: -0.015993675, z: -0.0041118073, w: 0.999863}
+  m_LocalRotation: {x: 0.0011567185, y: -0.015990615, z: -0.0041096387, w: 0.9998631}
   m_LocalPosition: {x: 3.2, y: -5.6, z: 57.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5462,6 +5463,22 @@ Transform:
   - {fileID: 2460405774758776867}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.125, y: -1.833, z: -0.473}
+--- !u!114 &5601535209942715837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045175853974406737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57041ce523ea64245967ffb8b018c3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake: {fileID: 6456766999152815337}
+  leftchain: {fileID: 8281560546701741356}
+  rightchain: {fileID: 8801887683899929050}
+  speed: {fileID: 1212721332214909538}
 --- !u!1 &6190624783328737387
 GameObject:
   m_ObjectHideFlags: 0

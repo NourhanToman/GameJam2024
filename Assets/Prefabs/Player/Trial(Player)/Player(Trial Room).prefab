@@ -611,6 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8016868820653669376}
+  - component: {fileID: 2056133383163891915}
   m_Layer: 0
   m_Name: Player(Trial Room)
   m_TagString: Untagged
@@ -636,6 +637,22 @@ Transform:
   - {fileID: 1134150143213366583}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2056133383163891915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650584653921292326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57041ce523ea64245967ffb8b018c3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake: {fileID: 3454726896340806311}
+  leftchain: {fileID: 6506195319815620703}
+  rightchain: {fileID: 1665782531946811213}
+  speed: {fileID: 5601773419549015442}
 --- !u!1 &651959251215580852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3060720939834123699}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 

@@ -9,18 +9,21 @@ public class PlayerEffects: MonoBehaviour
     [SerializeField] private GameObject leftchain;
     [SerializeField] private GameObject rightchain;
     [SerializeField] private CustomThirdPersonController speed;
-    void Start()
+    
+
+    private void Update()
     {
-        if(GameManager.Instance.playerState == PlayerState.NoCamShake)
+        if (GameManager.Instance.playerState == PlayerState.NoCamShake)
         {
             shake.enabled = false;
-        }else if (GameManager.Instance.playerState == PlayerState.NoHandCuf)
+        }
+        else if (GameManager.Instance.playerState == PlayerState.NoHandCuf)
         {
-            shake.enabled=false;
+            shake.enabled = false;
             leftchain.gameObject.SetActive(false);
             rightchain.gameObject.SetActive(false);
             speed.MoveSpeed = 4;
-            speed.SprintSpeed = 4;
+            speed.SprintSpeed = 6;
         }
     }
 
