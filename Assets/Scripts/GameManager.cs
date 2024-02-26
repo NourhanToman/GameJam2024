@@ -95,33 +95,51 @@ public class GameManager : MonoBehaviour
                 PauseMenuExists = false;
                 SceneManager.LoadScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Trail:
                 PauseMenuExists = false;
                 SceneManager.LoadScene(2);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Justice:
                 PauseMenuExists = false;
                 //JusticeNoOfVisits++;
                 SceneManager.LoadScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Peace:
                 PauseMenuExists = false;
                 //PeaceNoOfVisits++;
                 SceneManager.LoadScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Freedom:
                 PauseMenuExists = false;
                 //FreedomNoOfVisits++;
                 SceneManager.LoadScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Win:
                 SceneManager.LoadScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Pause:
                 

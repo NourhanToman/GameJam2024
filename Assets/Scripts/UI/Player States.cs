@@ -97,15 +97,16 @@ public class PlayerStates : MonoBehaviour
             _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime); 
             if (vignette != null)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime*0.1f);
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime*0.4f);
             }
         }
-
-        if (isDrowning && _currentHealth <= 0)
-        {    
+        Debug.Log("Before");
+        if (isDrowning && _currentHealth < 100)
+        {
+            Debug.Log(isDrowning);
             if (vignette != null)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime*0.1f); 
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime * 0.6f); 
             }
             if (_currentHealth <= 0)
             {
