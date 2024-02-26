@@ -24,17 +24,11 @@ public class PlayerStates : MonoBehaviour
     public float _outOfAirDamage = 25f;
     public GameObject _pool;
     private bool isDrowning = false;
+    private bool isSuffocating = false;
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+       Instance= this;
     }
 
     void Start()
@@ -56,6 +50,7 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
+
     public void SetHealth(float health)
     {
         _currentHealth = health;
@@ -63,59 +58,74 @@ public class PlayerStates : MonoBehaviour
 
  
     void Update()
-    {        
-        if (_camera.transform.position.y - _pool.transform.position.y <= 0f)
+    {
+       /* if (GameManager.Instance.state == GameStates.Freedom)
+        {*/
+           // Debug.Log("Freedom");
+        if (_pool != null)
         {
-            isDrowning = true;
-        }
-        else 
-        {
-            isDrowning = false;
-        }
-        
-        if (isDrowning)
-        {
-            _oxygenTimer += Time.deltaTime;
-            if (_oxygenTimer >= _decreaseInterval)
+            if (_camera.transform.position.y - _pool.transform.position.y <= 0f)
             {
-                DecreaseOxygen();
-                _oxygenTimer = 0;
+                isDrowning = true;
+            }
+            else
+            {
+                isDrowning = false;
             }
         }
 
-        /*if (GameManager.Instance.state == GameStates.Peace || GameManager.Instance.state == GameStates.Freedom)
+        if(GameManager.Instance.state == GameStates.Peace)
         {
-            Debug.Log("can");
+           // Debug.Log("Peace");
+            isSuffocating = true;
         }
         else
         {
-            PlayerStates.Instance._currentOxygenPercent = PlayerStates.Instance._maxOxygenPercent;
-        }*/
+            isSuffocating = false;
+        }
 
-        if (isDrowning == false)
-        {
-            _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime); 
-            if (vignette != null)
+
+            if (isDrowning || isSuffocating)
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime*0.4f);
+                _oxygenTimer += Time.deltaTime;
+                if (_oxygenTimer >= _decreaseInterval)
+                {
+                    DecreaseOxygen();
+                    _oxygenTimer = 0;
+                }
+            }
+
+        if (_pool != null)
+        {
+            if (isDrowning == false)
+            {
+                _currentHealth = Mathf.Lerp(_currentHealth, _maxHealth, Time.deltaTime);
+                if (vignette != null)
+                {
+                    vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0f, Time.deltaTime * 0.4f);
+                }
             }
         }
-        Debug.Log("Before");
-        if (isDrowning && _currentHealth < 100)
-        {
-            Debug.Log(isDrowning);
-            if (vignette != null)
+            Debug.Log("Before");
+            if ((isDrowning && _currentHealth < 100) || (isSuffocating && _currentHealth < 100))
             {
-                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime * 0.6f); 
+                Debug.Log((isSuffocating && _currentHealth < 100));
+                if (vignette != null)
+                {
+                    vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 1f, Time.deltaTime * 0.6f);
+                }
+                if (_currentHealth <= 0)
+                {
+               
+                    GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.none);
+                    GameManager.Instance.UpdateGameState(GameStates.Trail);
+                }
             }
-            if (_currentHealth <= 0)
-            {
-                GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.none);
-                GameManager.Instance.UpdateGameState(GameStates.Trail);
-            }
-        }
     }
-
-
+ 
 
 }
+
+
+
+

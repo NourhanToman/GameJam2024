@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
        // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
-        state = GameStates.Bedroom;    
+       /* state = GameStates.Bedroom;    
         attempts = RoomsAttempts.ONE;
-        requirments = roomsRequirments.book;
+        requirments = roomsRequirments.book;*/
         playerState = PlayerState.NotFree;
         cameraLock = Player.GetComponent<CustomThirdPersonController>();
     }
@@ -72,14 +72,14 @@ public class GameManager : MonoBehaviour
                 
                 playerInputs.cursorLocked = false;
                 cameraLock.LockCameraPosition = true;
-                UpdateGameState(GameStates.Pause);
+                //UpdateGameState(GameStates.Pause);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuExists)
             {
                 
                 playerInputs.cursorLocked = true;
                 cameraLock.LockCameraPosition = false;
-                UpdateGameState(GameStates.Resume);
+               // UpdateGameState(GameStates.Resume);
 
         }
 
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
                 cameraLock = Player.GetComponent<CustomThirdPersonController>();
                 playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
-            case GameStates.Pause:
+            /*case GameStates.Pause:
                 
                 PauseMenuExists = true;
                 PauseMenuInstan = Instantiate(PauseMenuPrefab);
@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
                 Destroy(PauseMenuInstan);
                 playerInputs.cursorLocked = true;
                 cameraLock.LockCameraPosition = false;
-                break;
+                break;*/
 
         }
     }
@@ -210,9 +210,9 @@ public enum GameStates
     Justice,
     Peace,
     Freedom,
-    Win,
-    Pause,
-    Resume
+    Win
+   /* Pause,
+    Resume*/
 }
 
 
