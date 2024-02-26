@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 public class CamShake : MonoBehaviour
 {
-    public float shakeDuration = 0.5f;
-    public float shakeIntensity = 0.2f;
+    public float shakeDuration = 0.2f;
+    public float shakeIntensity = 0.1f;
 
     private Vector3 originalPosition;
 
@@ -27,7 +27,7 @@ public class CamShake : MonoBehaviour
         while (elapsedTime < shakeDuration)
         {
             Vector3 shakeOffset = Random.insideUnitSphere * shakeIntensity;
-            transform.localPosition = originalPosition + shakeOffset;
+            transform.localPosition = Vector3.Lerp( originalPosition , shakeOffset, Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
