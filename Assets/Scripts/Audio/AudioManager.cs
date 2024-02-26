@@ -48,7 +48,6 @@ public class AudioManager : MonoBehaviour
                 Dialog.PlayOneShot(GetClip(type, name));
                 break;
         }
-        
     }
 
     public void MuteType(AudioType type)
@@ -68,7 +67,7 @@ public class AudioManager : MonoBehaviour
                 break;
         }
     }
-    public void All(AudioType type)
+    public void MuteAll(AudioType type)
     {
         MuteType(AudioType.Music);
         MuteType(AudioType.SFX);
@@ -111,8 +110,18 @@ public class AudioManager : MonoBehaviour
                 Music.PlayOneShot(clip);
                 break;
         }
-
     }
+    public void Stop(AudioType type, AudioClip clip)
+    {
+        switch (type)
+        {
+            case AudioType.SFX:
+               // SFX.Stop();
+                break;
 
-
+            case AudioType.Music:
+              //  Music.PlayOneShot(clip);
+                break;
+        }
+    }
 }

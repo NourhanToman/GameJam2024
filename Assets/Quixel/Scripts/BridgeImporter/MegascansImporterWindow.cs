@@ -259,7 +259,7 @@ namespace Quixel
                 GUILayout.BeginHorizontal();
 
                 importAllTextures = EditorGUI.Toggle(importAllTexturesLoc, importAllTextures, MSCheckBox);
-                GUILayout.Box("Import All Textures", MSNormalTextStyle, GUILayout.Height(textSize.y), GUILayout.Width(textSize.x));
+                GUILayout.Box("Import MuteAll Textures", MSNormalTextStyle, GUILayout.Height(textSize.y), GUILayout.Width(textSize.x));
 
                 GUILayout.EndHorizontal();
 
