@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 using UnityEngine.Rendering;
@@ -108,6 +109,7 @@ public class PlayerStates : MonoBehaviour
             }
             if (_currentHealth <= 0)
             {
+                GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.none);
                 GameManager.Instance.UpdateGameState(GameStates.Trail);
             }
         }

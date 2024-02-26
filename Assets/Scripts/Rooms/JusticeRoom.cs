@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class JusticeRoom : MonoBehaviour
@@ -8,16 +9,32 @@ public class JusticeRoom : MonoBehaviour
     [SerializeField] GameObject _scannerPrefab;
     [SerializeField] GameObject _parent;
     private float duration = 5;
-
-    void Start()
+    private bool playONCE = true;
+    private void Start()
     {
         
+        if (GameManager.Instance.attempts == RoomsAttempts.ONE)
+        {
+            StartCoroutine(PlayerFirstVerse());
+        }
+    }
+
+
+    private IEnumerator PlayerFirstVerse()
+    {
+        yield return new WaitForSeconds(5f);
+        TextManger.instance.PlayMessage(7);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
+            if (playONCE)
+            {
+                TextManger.instance.PlayMessage(8);
+                playONCE = false;
+            }
             GameObject _scanner = Instantiate(_scannerPrefab, _parent.transform.position,Quaternion.identity);
             ParticleSystem _scanParticle = _scanner.transform.GetChild(0).GetComponent<ParticleSystem>();
 

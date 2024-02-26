@@ -56,6 +56,8 @@ public class PasscodePuzzle : InteractableBase
             { 
                 portal.SetActive(true);
                 camshake.enabled = false;
+                GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.JusticePortal);
+                GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.TWO);
                 StopPuzzle();
             }
         }

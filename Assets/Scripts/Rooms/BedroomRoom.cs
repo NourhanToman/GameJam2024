@@ -32,17 +32,28 @@ public class BedroomRoom : MonoBehaviour
     {
         PausePanel.SetActive(false);
         player.GetComponent<CustomThirdPersonController>().MoveSpeed = 2.5f;
-        clip = AudioManager.instance.GetClip(AudioType.SFX, "Paper");
-        AudioManager.instance.Play(AudioType.SFX, clip);
-        StartCoroutine(DelaySound(clip.length,AudioType.SFX, "Player1"));
+        if (GameManager.Instance.state == GameStates.Win)
+        {
+            TextManger.instance.PlayMessage(10);
+        }
+        else
+        {
+           
+            clip = AudioManager.instance.GetClip(AudioType.SFX, "Paper");
+            AudioManager.instance.Play(AudioType.SFX, clip);
+            StartCoroutine(DelaySound(clip.length, AudioType.SFX, "Player1"));
+        }
+        
     }
     private IEnumerator DelaySound(float length, AudioType type, string name)
     {
         yield return new WaitForSeconds(length);
         AudioManager.instance.Play(type, name);
+
         if (BookOpen)
         {
-            SetRequired(roomsRequirments.portal);
+            Debug.Log("opened");
+            SetRequired(roomsRequirments.book);
         }
     }
     public void SetRequired(roomsRequirments room)
@@ -54,9 +65,8 @@ public class BedroomRoom : MonoBehaviour
                 case roomsRequirments.book:
                     BookOpen = true;
                     StartCoroutine(DelaySound(clip.length, AudioType.SFX, "Player2"));
-
                     break;
-                case roomsRequirments.portal:
+                case roomsRequirments.BedroonPortal:
                     PortalOpen = true;
                     StartCoroutine(StartPortal());
                     break;
