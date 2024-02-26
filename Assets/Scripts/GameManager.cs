@@ -65,8 +65,6 @@ public class GameManager : MonoBehaviour
         //Debug.Log(playerState);
         /*if (!PauseMenuExists)
         {*/
-
-        Debug.Log(attempts);
         if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenuExists)
             {
                 
