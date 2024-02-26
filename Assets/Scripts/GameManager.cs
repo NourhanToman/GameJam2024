@@ -4,20 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public enum RoomsAttempts
+{
+    ONE,
+    TWO,
+    THREE
+}
 public enum roomsRequirments
 {
+    none,
     book,
-    portal,
+    BedroonPortal,
+    FreedomPortal,
+    JusticePortal,
+    PeacePortal,
     box
 }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameStates state;
+    public RoomsAttempts attempts;
+    public roomsRequirments requirments;
     public GameObject PauseMenuPrefab;
-    [HideInInspector] public int FreedomNoOfVisits = 0;
+    public PlayerState playerState;
+   /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
-    [HideInInspector] public int JusticeNoOfVisits = 0;
+    [HideInInspector] public int JusticeNoOfVisits = 0;*/
     [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
     private bool PauseMenuExists = false;
@@ -37,10 +51,14 @@ public class GameManager : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
-        state = GameStates.Bedroom;        
+        state = GameStates.Bedroom;    
+        attempts = RoomsAttempts.ONE;
+        requirments = roomsRequirments.none;
+        playerState = PlayerState.NotFree;
     }
     private void Update()
     {
+        //Debug.Log(playerState);
         if (!PauseMenuExists)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -67,23 +85,25 @@ public class GameManager : MonoBehaviour
                 break;
             case GameStates.Justice:
                 PauseMenuExists = false;
-                JusticeNoOfVisits++;
+                //JusticeNoOfVisits++;
                 SceneManager.LoadScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
                 PauseMenuExists = false;
-                PeaceNoOfVisits++;
+                //PeaceNoOfVisits++;
                 SceneManager.LoadScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
                 PauseMenuExists = false;
-                FreedomNoOfVisits++;
+                //FreedomNoOfVisits++;
                 SceneManager.LoadScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Win:
+                SceneManager.LoadScene(1);
+                TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Pause:
                 PauseMenuExists = true;
@@ -94,6 +114,50 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public void UpdateRoomsRequirements(roomsRequirments req)
+    {
+        requirments = req;
+        switch (req)
+        {
+            case roomsRequirments.none:
+                playerState = PlayerState.NotFree;
+                break;
+            case roomsRequirments.FreedomPortal:
+                playerState = PlayerState.NoHandCuf;
+                break;
+            case roomsRequirments.PeacePortal:
+                state = GameStates.Bedroom;
+                break;
+            case roomsRequirments.JusticePortal: 
+                playerState = PlayerState.NoCamShake;
+                break;
+        }
+    }
+
+
+    public void UpdateRoomsAttempts(RoomsAttempts attempt)
+    {
+        attempts = attempt;
+        switch (attempt)
+        {
+            case RoomsAttempts.ONE:
+                break;
+            case RoomsAttempts.TWO:
+                attempts = RoomsAttempts.TWO;
+                break;
+            case RoomsAttempts.THREE:
+                attempts = RoomsAttempts.THREE;
+                break;
+        }
+    }
+}
+
+public enum PlayerState
+{
+    NotFree,
+    NoCamShake,
+    NoHandCuf
 }
 public enum GameStates
 {

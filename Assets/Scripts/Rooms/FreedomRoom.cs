@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class FreedomRoom : MonoBehaviour
 {
+    
     private bool isSolved = false;
-    public GameObject portal;
+  //  public GameObject portal;
 
     private void Start()
     {
-        portal.SetActive(false);
-        if(GameManager.Instance.attempts == RoomsAttempts.freedomONE)
+       // portal.SetActive(false);
+        if(GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
             StartCoroutine(PlayerFirstVerse());
         }
-        if (GameManager.Instance.attempts == RoomsAttempts.freedomTWO)
+        if (GameManager.Instance.attempts == RoomsAttempts.TWO)
         {
             StartCoroutine(PlayerSecondVerse());
         }
@@ -44,20 +45,14 @@ public class FreedomRoom : MonoBehaviour
                 case roomsRequirments.box:
                     isSolved = true;
                     break;
-                case roomsRequirments.portal:
-                    portal.SetActive (true);
-                    //remove chains
+                case roomsRequirments.FreedomPortal:
+                    GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
+                    GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.THREE);
+                   // portal.SetActive (true);
                     break;
             }
         }
     }
 }
 
-public enum PlayerState
-{
-    Dead,
-    CamShake,
-    HandCuf,
-    NoCamShake,
-    NoHandCuf
-}
+

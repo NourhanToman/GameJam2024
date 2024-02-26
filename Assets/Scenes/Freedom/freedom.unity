@@ -2094,7 +2094,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2246,7 +2246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &434086504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,8 +2282,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 4
-  attempts: 0
-  pauseMenu: {fileID: 1621685267}
+  attempts: 1
+  requirments: 0
+  PauseMenuPrefab: {fileID: 1621685267}
+  playerState: 0
+  Player: {fileID: 0}
+  playerInputs: {fileID: 0}
 --- !u!4 &434086506
 Transform:
   m_ObjectHideFlags: 0
@@ -5806,7 +5810,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  portal: {fileID: 0}
+  portal: {fileID: 394147244}
 --- !u!114 &893332514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7181,12 +7185,12 @@ PrefabInstance:
     - target: {fileID: 8225518548957990932, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.982
+      value: -2.094
       objectReference: {fileID: 0}
     - target: {fileID: 8225518548957990932, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.228
+      value: -12.206
       objectReference: {fileID: 0}
     - target: {fileID: 8225518548957990932, guid: 665c4a9f5e945b746819c23f091ecdb9,
         type: 3}
@@ -7635,6 +7639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466495865191774951, guid: 68c3eed682603464f9f3bbd4df08c6e8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9550,7 +9559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1576690300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10045,6 +10054,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010144694980781158, guid: d9ce999d75a6f244ea40251376de7aa9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

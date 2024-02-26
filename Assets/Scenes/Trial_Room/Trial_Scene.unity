@@ -6303,7 +6303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1060931188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6317,6 +6317,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+  attempts: 0
+  requirments: 0
+  PauseMenuPrefab: {fileID: 0}
+  playerState: 0
+  Player: {fileID: 0}
+  playerInputs: {fileID: 0}
 --- !u!4 &1060931189
 Transform:
   m_ObjectHideFlags: 0
@@ -7321,7 +7327,7 @@ PrefabInstance:
     - target: {fileID: 4466495865191774951, guid: 68c3eed682603464f9f3bbd4df08c6e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
