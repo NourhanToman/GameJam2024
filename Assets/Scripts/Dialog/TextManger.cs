@@ -84,8 +84,9 @@ public class TextManger : MonoBehaviour
             _player.transform.position.z + _dialogTxtDistance) , _DialogTextPrefab.transform.rotation,_player.transform);
 
         messageObj.transform.localScale = _dialogScale;
-        messageObj.GetComponent<TextMeshPro>().text = message;
-        messageObj.GetComponent<TextAnimation>().StartAnimation();
+
+        messageObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = message;
+        messageObj.transform.GetChild(0).GetComponent<TextAnimation>().StartAnimation();
     }
     public void ShowInteractableText(Transform interactable , InteractableObjText message)
     {
