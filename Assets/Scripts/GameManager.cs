@@ -28,12 +28,14 @@ public class GameManager : MonoBehaviour
     public RoomsAttempts attempts;
     public roomsRequirments requirments;
     public GameObject PauseMenuPrefab;
+    private GameObject PauseMenuInstan;
     public PlayerState playerState;
    /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
     [HideInInspector] public int JusticeNoOfVisits = 0;*/
     [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
+    [HideInInspector] public CustomThirdPersonController cameraLock;
     private bool PauseMenuExists = false;
     private void Awake()
     {
@@ -49,23 +51,37 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+       // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
         state = GameStates.Bedroom;    
         attempts = RoomsAttempts.ONE;
         requirments = roomsRequirments.book;
         playerState = PlayerState.NotFree;
+        cameraLock = Player.GetComponent<CustomThirdPersonController>();
     }
     private void Update()
     {
         //Debug.Log(playerState);
-        if (!PauseMenuExists)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (!PauseMenuExists)
+        {*/
+        if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenuExists)
             {
+                
+                playerInputs.cursorLocked = false;
+                cameraLock.LockCameraPosition = true;
                 UpdateGameState(GameStates.Pause);
-            }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuExists)
+            {
+                
+                playerInputs.cursorLocked = true;
+                cameraLock.LockCameraPosition = false;
+                UpdateGameState(GameStates.Resume);
+
+        }
+
+        // }
     }
     public void UpdateGameState(GameStates states)
     {
@@ -77,39 +93,65 @@ public class GameManager : MonoBehaviour
                 PauseMenuExists = false;
                 SceneManager.LoadScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Trail:
                 PauseMenuExists = false;
                 SceneManager.LoadScene(2);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Justice:
                 PauseMenuExists = false;
                 //JusticeNoOfVisits++;
                 SceneManager.LoadScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Peace:
                 PauseMenuExists = false;
                 //PeaceNoOfVisits++;
                 SceneManager.LoadScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Freedom:
                 PauseMenuExists = false;
                 //FreedomNoOfVisits++;
                 SceneManager.LoadScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Win:
                 SceneManager.LoadScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
+                Player = GameObject.FindWithTag("Player");
+                cameraLock = Player.GetComponent<CustomThirdPersonController>();
+                playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Pause:
+                
                 PauseMenuExists = true;
-                Instantiate(PauseMenuPrefab);
+                PauseMenuInstan = Instantiate(PauseMenuPrefab);
+                playerInputs.cursorLocked = false;
+                cameraLock.LockCameraPosition = true;
                 break;
             case GameStates.Resume:
+                Debug.Log("Resume");
+                PauseMenuExists = false;
+                Destroy(PauseMenuInstan);
+                playerInputs.cursorLocked = true;
+                cameraLock.LockCameraPosition = false;
                 break;
 
         }

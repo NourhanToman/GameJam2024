@@ -9,8 +9,34 @@ public class TrailRoom : MonoBehaviour
     private bool isDialogStarted = false;
     private float hitWaitTime = 20f;
     AudioClip nextClip;
+
+    [SerializeField] private GameObject FreedomPortal;
+    [SerializeField] private GameObject JusticePortal;
+    [SerializeField] private GameObject PeacePortal;
+
+
     void Start()
     {
+        Debug.Log(GameManager.Instance.attempts);
+        switch (GameManager.Instance.attempts)
+        {
+            case RoomsAttempts.ONE: 
+                FreedomPortal.GetComponent<MeshCollider>().enabled = true;
+                JusticePortal.GetComponent<MeshCollider>().enabled = true;
+                PeacePortal.GetComponent<MeshCollider>().enabled = true;                
+                break;
+            case RoomsAttempts.TWO:
+                FreedomPortal.GetComponent<MeshCollider>().enabled = true;
+                JusticePortal.GetComponent<MeshCollider>().enabled = false;
+                PeacePortal.GetComponent<MeshCollider>().enabled = true;
+                break;
+            case RoomsAttempts.THREE:
+                FreedomPortal.GetComponent<MeshCollider>().enabled = false;
+                JusticePortal.GetComponent<MeshCollider>().enabled = false;
+                PeacePortal.GetComponent<MeshCollider>().enabled = true;
+                break;
+        }
+
     }
 
     void Update()

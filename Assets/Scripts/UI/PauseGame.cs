@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    public static PauseGame Instance;
+    //public static PauseGame Instance;
     [SerializeField] private GameObject pauseMenu;
 
     private GameManager gameState;
 
-    private void Awake()
+  /*  private void Awake()
     {
         Instance = this;
-    }
+    }*/
     void Start()
     {
         gameState = GameManager.Instance;
@@ -36,13 +36,19 @@ public class PauseGame : MonoBehaviour
 
             if (pauseMenu.activeSelf)
             {
-               // gameState.UpdateGameState(GameStates.Pause);
+                // gameState.UpdateGameState(GameStates.Pause);
+                Debug.Log("active");
                 Pause();
+                GameManager.Instance.playerInputs.cursorLocked = false;
+                GameManager.Instance.cameraLock.LockCameraPosition = true;
             }
             else
             {
+                Debug.Log("not active");
                // gameState.UpdateGameState(GameStates.Resume);
                 Resume();
+                GameManager.Instance.playerInputs.cursorLocked = true;
+                GameManager.Instance.cameraLock.LockCameraPosition = false;
             }
         }
     }

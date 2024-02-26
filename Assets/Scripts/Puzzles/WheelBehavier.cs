@@ -18,6 +18,7 @@ public class WheelBehavier : InteractableBase
         base.OnInteract();
         StartCoroutine("StartRotating");
         lowerWATER?.Invoke();
+        
     }
     private IEnumerator StartRotating()
     {
@@ -39,6 +40,8 @@ public class WheelBehavier : InteractableBase
         }
         isRotating = false;
         portal.gameObject.SetActive(true);
-        
+        GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
+        GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.THREE);
+
     }
 }

@@ -44,10 +44,11 @@ public class FreedomRoom : MonoBehaviour
             {
                 case roomsRequirments.box:
                     isSolved = true;
+                    
                     break;
                 case roomsRequirments.FreedomPortal:
-                    GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
-                    GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.THREE);
+                   // GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
+                    
                    // portal.SetActive (true);
                     break;
             }

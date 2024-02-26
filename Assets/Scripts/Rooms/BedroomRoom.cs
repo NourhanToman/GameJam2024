@@ -14,7 +14,7 @@ public class BedroomRoom : MonoBehaviour
     public bool BookOpen = false;
     public bool PortalOpen = false;
 
-    [SerializeField] GameObject PausePanel;
+   // [SerializeField] GameObject PausePanel;
 
 
     private void Awake()
@@ -30,7 +30,7 @@ public class BedroomRoom : MonoBehaviour
     }
     void Start()
     {
-        PausePanel.SetActive(false);
+       // PausePanel.SetActive(false);
         player.GetComponent<CustomThirdPersonController>().MoveSpeed = 2.5f;
         if (GameManager.Instance.state == GameStates.Win)
         {
@@ -81,7 +81,7 @@ public class BedroomRoom : MonoBehaviour
         portal.gameObject.SetActive(true);
     }
 
-    void Update()
+   /* void Update()
     {
        if(Input.GetKeyDown(KeyCode.Escape)) {
 
@@ -94,5 +94,5 @@ public class BedroomRoom : MonoBehaviour
                 PausePanel.gameObject.SetActive(true);
             }
         }
-    }
+    }*/
 }

@@ -78,14 +78,10 @@ public class TextManger : MonoBehaviour
     }
     public void ShowDialogText(string message)
     {
-        Vector3 playerForward = _player.transform.forward.normalized;
-        GameObject messageObj = Instantiate(_DialogTextPrefab, new Vector3(_player.transform.position.x,
-            _player.transform.position.y + _dialogHight,
-            _player.transform.position.z + _dialogTxtDistance) , _DialogTextPrefab.transform.rotation,_player.transform);
-
+        GameObject messageObj = Instantiate(_DialogTextPrefab);
         messageObj.transform.localScale = _dialogScale;
-        messageObj.GetComponent<TextMeshPro>().text = message;
-        messageObj.GetComponent<TextAnimation>().StartAnimation();
+        messageObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = message;
+        messageObj.transform.GetChild(0).GetComponent<TextAnimationGUI>().StartAnimation();
     }
     public void ShowInteractableText(Transform interactable , InteractableObjText message)
     {
