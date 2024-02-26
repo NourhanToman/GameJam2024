@@ -31,7 +31,6 @@ public class BedroomRoom : MonoBehaviour
     void Start()
     {
        // PausePanel.SetActive(false);
-        player.GetComponent<CustomThirdPersonController>().MoveSpeed = 2.5f;
         if (GameManager.Instance.state == GameStates.Win)
         {
             TextManger.instance.PlayMessage(10);

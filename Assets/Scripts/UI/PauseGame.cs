@@ -4,15 +4,95 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    //public static PauseGame Instance;
-    [SerializeField] private GameObject pauseMenu;
+    /* public static PauseGame Instance;
+     [SerializeField] private GameObject pauseMenu;
 
+     private GameManager gameState;
+
+     private void Awake()
+     {
+         if (Instance != null)
+         {
+             Destroy(gameObject);
+         }
+         else
+         {
+             Instance = this;
+             DontDestroyOnLoad(gameObject);
+         }
+     }
+     void Start()
+     {
+         pauseMenu?.SetActive(false);
+         gameState = GameManager.Instance;
+     }
+
+     void Update()
+     {
+         if (Input.GetKeyDown(KeyCode.Escape))
+         {
+             TogglePauseMenu();
+         }
+     }
+
+
+     void TogglePauseMenu()
+     {
+
+         if (pauseMenu != null)
+         {
+             pauseMenu?.SetActive(!pauseMenu.activeSelf);
+
+             if (pauseMenu.activeSelf)
+             {
+
+                 Pause();
+                 GameManager.Instance.playerInputs.cursorLocked = false;
+                 GameManager.Instance.cameraLock.LockCameraPosition = true;
+             }
+             else
+             {
+
+                 Resume();
+                 GameManager.Instance.playerInputs.cursorLocked = true;
+                 GameManager.Instance.cameraLock.LockCameraPosition = false;
+             }
+         }
+     }
+
+     public void Pause()
+     {
+         pauseMenu?.SetActive(true);
+         Time.timeScale = 0f;
+     }
+
+     public void Resume()
+     {
+         pauseMenu?.SetActive(false);
+         Time.timeScale = 1f;
+
+     }*/
+
+
+    public static PauseGame Instance;
+    [SerializeField] private GameObject pauseMenuPrefab; // Prefab to instantiate
+
+    private GameObject pauseMenuInstance; // Reference to the instantiated pause menu
     private GameManager gameState;
 
-  /*  private void Awake()
+    private void Awake()
     {
-        Instance = this;
-    }*/
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
         gameState = GameManager.Instance;
@@ -26,44 +106,44 @@ public class PauseGame : MonoBehaviour
         }
     }
 
-
     void TogglePauseMenu()
     {
-
-        if (pauseMenu != null)
+        if (pauseMenuInstance == null)
         {
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            // Instantiate the pause menu prefab
+            pauseMenuInstance = Instantiate(pauseMenuPrefab, transform.position, transform.rotation);
+            pauseMenuInstance.transform.SetParent(transform); // Set the PauseGame object as the parent
+        }
 
-            if (pauseMenu.activeSelf)
-            {
-                // gameState.UpdateGameState(GameStates.Pause);
-                Debug.Log("active");
-                Pause();
-                GameManager.Instance.playerInputs.cursorLocked = false;
-                GameManager.Instance.cameraLock.LockCameraPosition = true;
-            }
-            else
-            {
-                Debug.Log("not active");
-               // gameState.UpdateGameState(GameStates.Resume);
-                Resume();
-                GameManager.Instance.playerInputs.cursorLocked = true;
-                GameManager.Instance.cameraLock.LockCameraPosition = false;
-            }
+        if (pauseMenuInstance.activeSelf)
+        {
+            Pause();
+            GameManager.Instance.playerInputs.cursorLocked = false;
+            GameManager.Instance.cameraLock.LockCameraPosition = true;
+        }
+        else
+        {
+            Resume();
+            GameManager.Instance.playerInputs.cursorLocked = true;
+            GameManager.Instance.cameraLock.LockCameraPosition = false;
         }
     }
 
     public void Pause()
     {
-        pauseMenu?.SetActive(true);
+        pauseMenuInstance?.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void Resume()
     {
-        pauseMenu?.SetActive(false);
+        if (pauseMenuInstance != null)
+        {
+            Destroy(pauseMenuInstance);
+            pauseMenuInstance = null;
+        }
+
         Time.timeScale = 1f;
-        
     }
 
 }

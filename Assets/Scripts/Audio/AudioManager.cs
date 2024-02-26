@@ -32,16 +32,47 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }  
     }
-    public void Play(AudioType type, string name)
+
+    public void LoopPlay(AudioType type, string name)
     {
         switch (type)
         {
             case AudioType.SFX:
                 SFX.PlayOneShot(GetClip(type, name));
+                SFX.loop = true;
                 break;
 
             case AudioType.Music:
                 Music.PlayOneShot(GetClip(type, name));
+                Music.loop = true;
+                break;
+        }
+    }
+    public void LoopStop(AudioType type, string name)
+    {
+        switch (type)
+        {
+            case AudioType.SFX:
+                SFX.PlayOneShot(GetClip(type, name));
+                SFX.loop = false;
+                break;
+
+            case AudioType.Music:
+                Music.PlayOneShot(GetClip(type, name));
+                Music.loop = false;
+                break;
+        }
+    }
+    public void Play(AudioType type, string name)
+    {
+        switch (type)
+        {
+            case AudioType.SFX:
+                SFX.PlayOneShot(GetClip(type, name));              
+                break;
+
+            case AudioType.Music:
+                Music.PlayOneShot(GetClip(type, name));              
                 break;
 
             case AudioType.Dialog:

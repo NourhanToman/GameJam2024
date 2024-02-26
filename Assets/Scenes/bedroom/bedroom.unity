@@ -2171,6 +2171,7 @@ GameObject:
   - component: {fileID: 821820579}
   - component: {fileID: 821820578}
   - component: {fileID: 821820580}
+  - component: {fileID: 821820581}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2236,6 +2237,20 @@ MonoBehaviour:
   _dialogScale: {x: 0.2, y: 0.2, z: 0.2}
   _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
   _player: {fileID: 7848768905772420649}
+--- !u!114 &821820581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821820577}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd51d8c7983ea64d8d492769020aa4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 6010144694980781158, guid: d9ce999d75a6f244ea40251376de7aa9,
+    type: 3}
 --- !u!1 &1020511351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,6 +5894,11 @@ PrefabInstance:
     - target: {fileID: 4382666375936254585, guid: 3c6e72ecab8b250408c770d7bc8da70c,
         type: 3}
       propertyPath: LockCameraPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974523667426714271, guid: 3c6e72ecab8b250408c770d7bc8da70c,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7146143133067588821, guid: 3c6e72ecab8b250408c770d7bc8da70c,

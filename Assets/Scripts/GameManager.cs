@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
        // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
-       /* state = GameStates.Bedroom;    
+        state = GameStates.Bedroom;
         attempts = RoomsAttempts.ONE;
-        requirments = roomsRequirments.book;*/
+        requirments = roomsRequirments.book;
         playerState = PlayerState.NotFree;
         cameraLock = Player.GetComponent<CustomThirdPersonController>();
     }

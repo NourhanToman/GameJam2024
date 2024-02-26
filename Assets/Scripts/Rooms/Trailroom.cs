@@ -17,6 +17,7 @@ public class TrailRoom : MonoBehaviour
 
     void Start()
     {
+        //AudioManager.instance.LoopStop(AudioType.SFX, "Water");
         Debug.Log(GameManager.Instance.attempts);
         switch (GameManager.Instance.attempts)
         {
