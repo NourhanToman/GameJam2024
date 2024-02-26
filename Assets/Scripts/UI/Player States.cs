@@ -49,7 +49,7 @@ public class PlayerStates : MonoBehaviour
     private void DecreaseOxygen()
     {
         _currentOxygenPercent -= _oxygenDecreasedRate * _decreaseInterval;
-        if(_currentOxygenPercent < 0)
+        if(_currentOxygenPercent <= 0)
         {
             _currentOxygenPercent = 0;
             SetHealth(_currentHealth - _outOfAirDamage);
@@ -101,7 +101,7 @@ public class PlayerStates : MonoBehaviour
             }
         }
 
-        if (isDrowning)
+        if (isDrowning && _currentHealth <= 0)
         {    
             if (vignette != null)
             {
@@ -114,4 +114,7 @@ public class PlayerStates : MonoBehaviour
             }
         }
     }
+
+
+
 }

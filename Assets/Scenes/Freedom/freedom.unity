@@ -602,10 +602,10 @@ MonoBehaviour:
   _maxHealth: 100
   _currentOxygenPercent: 0
   _maxOxygenPercent: 100
-  _oxygenDecreasedRate: 1
+  _oxygenDecreasedRate: 10
   _oxygenTimer: 100
   _decreaseInterval: 1
-  _outOfAirDamage: 5
+  _outOfAirDamage: 25
   _pool: {fileID: 512777804}
 --- !u!54 &85210922
 Rigidbody:
@@ -2288,6 +2288,7 @@ MonoBehaviour:
   playerState: 0
   Player: {fileID: 0}
   playerInputs: {fileID: 0}
+  cameraLock: {fileID: 0}
 --- !u!4 &434086506
 Transform:
   m_ObjectHideFlags: 0

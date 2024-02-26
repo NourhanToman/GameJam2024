@@ -1520,7 +1520,7 @@ GameObject:
   - component: {fileID: 233875030}
   - component: {fileID: 233875029}
   m_Layer: 0
-  m_Name: TrialRoom
+  m_Name: TrialRoom Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1539,6 +1539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReaperDistance: 20
+  FreedomPortal: {fileID: 1919334801}
+  JusticePortal: {fileID: 1341081281}
+  PeacePortal: {fileID: 648520158}
 --- !u!4 &233875030
 Transform:
   m_ObjectHideFlags: 0
@@ -3623,13 +3626,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ed08870614d906b4f84ecc1140e83feb,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 65bbdb4f6e66c0c4c879409298bb655d, type: 2}
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
       propertyPath: m_Name
-      value: Peace
+      value: Peace-Portal
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
@@ -4725,8 +4733,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701497101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.72, y: 2.2547894, z: -701.5276}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.391591, y: -0.40162253, z: 3.4110107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4737,7 +4745,7 @@ Transform:
   - {fileID: 1051815548}
   - {fileID: 2064622618}
   - {fileID: 956583669}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 768996857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718757107 stripped
 GameObject:
@@ -4829,6 +4837,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: trail room UV RIZOM
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 601834c64f910c74481544dabac65965,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5735792342862915891, guid: 601834c64f910c74481544dabac65965,
         type: 3}
       propertyPath: m_Enabled
@@ -4844,8 +4857,16 @@ PrefabInstance:
     - {fileID: -2063936825370000755, guid: 601834c64f910c74481544dabac65965, type: 3}
     - {fileID: 2863959997819801917, guid: 601834c64f910c74481544dabac65965, type: 3}
     - {fileID: -5558582530265374940, guid: 601834c64f910c74481544dabac65965, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 601834c64f910c74481544dabac65965,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 701497102}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 601834c64f910c74481544dabac65965,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 768996858}
     - targetCorrespondingSourceObject: {fileID: -8513424388201257645, guid: 601834c64f910c74481544dabac65965,
         type: 3}
       insertIndex: -1
@@ -5019,6 +5040,30 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1981288938}
   m_SourcePrefab: {fileID: 100100000, guid: 601834c64f910c74481544dabac65965, type: 3}
+--- !u!1 &768996856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 601834c64f910c74481544dabac65965,
+    type: 3}
+  m_PrefabInstance: {fileID: 768996855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &768996857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 601834c64f910c74481544dabac65965,
+    type: 3}
+  m_PrefabInstance: {fileID: 768996855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &768996858
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768996856}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &778477278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6039673904382198001, guid: 601834c64f910c74481544dabac65965,
@@ -6323,6 +6368,7 @@ MonoBehaviour:
   playerState: 0
   Player: {fileID: 0}
   playerInputs: {fileID: 0}
+  cameraLock: {fileID: 0}
 --- !u!4 &1060931189
 Transform:
   m_ObjectHideFlags: 0
@@ -6712,7 +6758,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
       propertyPath: m_Name
-      value: Justice
+      value: Justice-Portal
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
@@ -7951,7 +7997,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
       propertyPath: m_Name
-      value: Freedom
+      value: Freedom-Portal
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed08870614d906b4f84ecc1140e83feb,
         type: 3}
@@ -8379,7 +8425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2050453405
 Transform:
   m_ObjectHideFlags: 0
@@ -9182,6 +9228,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1060931189}
+  - {fileID: 233875030}
   - {fileID: 2050453405}
   - {fileID: 172581701}
   - {fileID: 968545223}
@@ -9192,7 +9239,6 @@ SceneRoots:
   - {fileID: 343108470}
   - {fileID: 700105100}
   - {fileID: 511457221}
-  - {fileID: 701497102}
   - {fileID: 1090613987}
   - {fileID: 1040193816}
   - {fileID: 768996855}
@@ -9201,6 +9247,5 @@ SceneRoots:
   - {fileID: 1919334800}
   - {fileID: 172165652}
   - {fileID: 1520685996}
-  - {fileID: 233875030}
   - {fileID: 1383640958}
   - {fileID: 35422556}

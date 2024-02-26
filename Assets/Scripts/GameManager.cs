@@ -28,12 +28,14 @@ public class GameManager : MonoBehaviour
     public RoomsAttempts attempts;
     public roomsRequirments requirments;
     public GameObject PauseMenuPrefab;
+    private GameObject PauseMenuInstan;
     public PlayerState playerState;
    /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
     [HideInInspector] public int JusticeNoOfVisits = 0;*/
     [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
+    [HideInInspector] public CustomThirdPersonController cameraLock;
     private bool PauseMenuExists = false;
     private void Awake()
     {
@@ -49,23 +51,39 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+       // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
         state = GameStates.Bedroom;    
         attempts = RoomsAttempts.ONE;
         requirments = roomsRequirments.book;
         playerState = PlayerState.NotFree;
+        cameraLock = Player.GetComponent<CustomThirdPersonController>();
     }
     private void Update()
     {
         //Debug.Log(playerState);
-        if (!PauseMenuExists)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (!PauseMenuExists)
+        {*/
+
+        Debug.Log(attempts);
+        if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenuExists)
             {
+                
+                playerInputs.cursorLocked = false;
+                cameraLock.LockCameraPosition = true;
                 UpdateGameState(GameStates.Pause);
-            }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuExists)
+            {
+                
+                playerInputs.cursorLocked = true;
+                cameraLock.LockCameraPosition = false;
+                UpdateGameState(GameStates.Resume);
+
+        }
+
+        // }
     }
     public void UpdateGameState(GameStates states)
     {
@@ -106,10 +124,18 @@ public class GameManager : MonoBehaviour
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Pause:
+                
                 PauseMenuExists = true;
-                Instantiate(PauseMenuPrefab);
+                PauseMenuInstan = Instantiate(PauseMenuPrefab);
+                playerInputs.cursorLocked = false;
+                cameraLock.LockCameraPosition = true;
                 break;
             case GameStates.Resume:
+                Debug.Log("Resume");
+                PauseMenuExists = false;
+                Destroy(PauseMenuInstan);
+                playerInputs.cursorLocked = true;
+                cameraLock.LockCameraPosition = false;
                 break;
 
         }
