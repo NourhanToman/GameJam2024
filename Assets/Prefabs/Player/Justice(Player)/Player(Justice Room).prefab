@@ -925,8 +925,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796342996654686356}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.036643673, y: 0.0000000018626449, z: -5.8207654e-11, w: 0.99932843}
-  m_LocalPosition: {x: -0.000000046682544, y: 1.7, z: -0.010000116}
+  m_LocalRotation: {x: 0.03664367, y: 0.0000000018626449, z: -0, w: 0.9993284}
+  m_LocalPosition: {x: 0.00000003207242, y: 1.7, z: -0.010000122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3520,7 +3520,7 @@ Transform:
   m_GameObject: {fileID: 5186294559110353837}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09315257, y: 0, z: 0, w: 0.99565184}
-  m_LocalPosition: {x: -0.000000046682544, y: 1.7, z: -0.010000116}
+  m_LocalPosition: {x: 0.00000003207242, y: 1.7, z: -0.010000122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5706,8 +5706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab92d2630f9194428ef371a840dbef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2.5
-  SprintSpeed: 2.5
+  MoveSpeed: 3.5
+  SprintSpeed: 3.5
   RotationSmoothTime: 0.3
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
