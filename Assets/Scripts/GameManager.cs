@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public RoomsAttempts attempts;
     public roomsRequirments requirments;
-    //public GameObject PauseMenuPrefab;
-    private GameObject PauseMenuInstan;
     public PlayerState playerState;
    /* [HideInInspector] public int FreedomNoOfVisits = 0;
     [HideInInspector] public int PeaceNoOfVisits = 0;
@@ -36,7 +34,6 @@ public class GameManager : MonoBehaviour
     /*[HideInInspector]*/ public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
     [HideInInspector] public CustomThirdPersonController cameraLock;
-    private bool PauseMenuExists = false;
     private void Awake()
     {
         if (Instance != null)
@@ -71,7 +68,6 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameStates.Bedroom:
-                PauseMenuExists = false;
                 SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
                 Player = GameObject.FindWithTag("Player");
@@ -79,25 +75,18 @@ public class GameManager : MonoBehaviour
                 playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Trail:
-                PauseMenuExists = false;
                 SceneController.instance.NextScene(2);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Justice:
-                PauseMenuExists = false;
-                //JusticeNoOfVisits++;
                 SceneController.instance.NextScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
-                PauseMenuExists = false;
-                //PeaceNoOfVisits++;
                 SceneController.instance.NextScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
-                PauseMenuExists = false;
-                //FreedomNoOfVisits++;
                 SceneController.instance.NextScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;

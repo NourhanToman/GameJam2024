@@ -30,7 +30,7 @@ public class SceneController : MonoBehaviour
     IEnumerator LoadScene(int i)
     {
         animator.SetTrigger("End");
-        yield return new WaitForSeconds(1);
+        yield return null;
         SceneManager.LoadScene(i);
         animator.SetTrigger("Start");
     }

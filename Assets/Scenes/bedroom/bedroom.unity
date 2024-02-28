@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _multipleUse: 0
   _isInteractable: 1
-  _tooltipMessage: interact
+  _tooltipMessage: Diary
   TXT: {fileID: 11400000, guid: c7407962772090a47902ac30e647e751, type: 2}
 --- !u!1 &821820577
 GameObject:
