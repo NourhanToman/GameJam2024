@@ -22,8 +22,8 @@ public class PlayerEffects: MonoBehaviour
             shake.enabled = false;
             leftchain.gameObject.SetActive(false);
             rightchain.gameObject.SetActive(false);
-            speed.MoveSpeed = 4;
-            speed.SprintSpeed = 6;
+            speed.MoveSpeed = 3.5f;
+            speed.SprintSpeed = 8;
         }
     }
 
