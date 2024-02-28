@@ -32,10 +32,11 @@ public class BedroomRoom : MonoBehaviour
         if (GameManager.Instance.state == GameStates.Win)
         {
             TextManger.instance.PlayMessage(10);
+            SceneController.instance.NextScene(0);
+
         }
         else
-        {
-            
+        {           
             clip = AudioManager.instance.GetClip(AudioType.SFX, "Paper");
             AudioManager.instance.Play(AudioType.SFX, clip);
             StartCoroutine(DelaySound(clip.length, AudioType.SFX, "Player1"));
