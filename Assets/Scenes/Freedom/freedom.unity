@@ -2618,7 +2618,6 @@ GameObject:
   - component: {fileID: 512777808}
   - component: {fileID: 512777807}
   - component: {fileID: 512777806}
-  - component: {fileID: 512777805}
   m_Layer: 0
   m_Name: Pool
   m_TagString: Water
@@ -2626,25 +2625,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &512777805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512777804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ddb383c270a42419c1ac8187c442cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _multipleUse: 0
-  _isInteractable: 1
-  _tooltipMessage: interact
-  waterTransform: {fileID: 512777808}
-  risingDuration: 5000
-  loweringDuration: 2500
-  highWaterLevel: 10
 --- !u!65 &512777806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5711,7 +5691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _multipleUse: 0
   _isInteractable: 1
-  _tooltipMessage: interact
+  _tooltipMessage: Water Wheel
   rotationDuration: 2
   rotatingVector: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   lowerWATER:
@@ -5744,7 +5724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _multipleUse: 0
   _isInteractable: 1
-  _tooltipMessage: interact
+  _tooltipMessage: Water Wheel
   waterTransform: {fileID: 512777808}
   risingDuration: 5000
   loweringDuration: 10
