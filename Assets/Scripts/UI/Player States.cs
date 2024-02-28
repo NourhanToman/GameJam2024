@@ -35,7 +35,7 @@ public class PlayerStates : MonoBehaviour
     {
         if (GameManager.Instance.attempts == RoomsAttempts.TWO)
         {
-            _oxygenDecreasedRate = 8f;
+            _oxygenDecreasedRate = 5f;
         }
 
         if(GameManager.Instance.attempts == RoomsAttempts.THREE)
@@ -45,7 +45,7 @@ public class PlayerStates : MonoBehaviour
 
         if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
-            _oxygenDecreasedRate = 15f;
+            _oxygenDecreasedRate = 20f;
         }
 
         _currentHealth = _maxHealth;
