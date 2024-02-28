@@ -35,7 +35,7 @@ public class TextAnimation : MonoBehaviour
                 // counter = 0; for looping the effect
                 yield return new WaitForSeconds(destroyTime);
                 if(!keepText)
-                  Destroy(gameObject);
+                  Destroy(gameObject,2);
             }
             counter++;
             yield return new WaitForSeconds(timeStep);
