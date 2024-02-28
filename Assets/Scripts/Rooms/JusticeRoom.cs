@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +11,11 @@ public class JusticeRoom : MonoBehaviour
     private bool playONCE = true;
     private void Start()
     {
-        
+        AudioManager.instance.Play(AudioType.Music, "Trail");
+       
+        GameManager.Instance.Player = GameObject.FindWithTag("Player");
+        GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
+        GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
         if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
             StartCoroutine(PlayerFirstVerse());

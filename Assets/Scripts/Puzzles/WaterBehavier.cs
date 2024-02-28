@@ -29,10 +29,11 @@ public class WaterBehavier : InteractableBase
     }
     public void Rise()
     {
+        
         StartCoroutine("StartRise");
     }
     public void Lower()
-    {
+    {             
         StartCoroutine("startLowering");
     }
     private IEnumerator StartRise()
@@ -52,6 +53,7 @@ public class WaterBehavier : InteractableBase
             yield return null;
         }
         isLowering = false;
+        
     }
     private IEnumerator startLowering()
     {
@@ -71,5 +73,6 @@ public class WaterBehavier : InteractableBase
         }
         risingDuration = 0;
         isRising = false;
+        
     }
 }

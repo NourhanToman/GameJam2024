@@ -18,7 +18,7 @@ public class PlayerStates : MonoBehaviour
 
     public float _currentOxygenPercent;
     public float _maxOxygenPercent = 100;
-    public float _oxygenDecreasedRate = 10f;
+    private float _oxygenDecreasedRate;
     public float _oxygenTimer = 100;
     public float _decreaseInterval = 1f;
     public float _outOfAirDamage = 25f;
@@ -33,6 +33,21 @@ public class PlayerStates : MonoBehaviour
 
     void Start()
     {
+        if (GameManager.Instance.attempts == RoomsAttempts.TWO)
+        {
+            _oxygenDecreasedRate = 8f;
+        }
+
+        if(GameManager.Instance.attempts == RoomsAttempts.THREE)
+        {
+            _oxygenDecreasedRate = 1f;
+        }
+
+        if (GameManager.Instance.attempts == RoomsAttempts.ONE)
+        {
+            _oxygenDecreasedRate = 15f;
+        }
+
         _currentHealth = _maxHealth;
         _currentOxygenPercent = _maxOxygenPercent;
         _camera = Camera.main;
@@ -42,6 +57,7 @@ public class PlayerStates : MonoBehaviour
 
     private void DecreaseOxygen()
     {
+        
         _currentOxygenPercent -= _oxygenDecreasedRate * _decreaseInterval;
         if(_currentOxygenPercent <= 0)
         {
@@ -59,9 +75,7 @@ public class PlayerStates : MonoBehaviour
  
     void Update()
     {
-       /* if (GameManager.Instance.state == GameStates.Freedom)
-        {*/
-           // Debug.Log("Freedom");
+      
         if (_pool != null)
         {
             if (_camera.transform.position.y - _pool.transform.position.y <= 0f)
@@ -71,17 +85,21 @@ public class PlayerStates : MonoBehaviour
             else
             {
                 isDrowning = false;
+               
+                
             }
         }
 
         if(GameManager.Instance.state == GameStates.Peace)
         {
-           // Debug.Log("Peace");
+           
             isSuffocating = true;
+            
         }
         else
         {
             isSuffocating = false;
+           
         }
 
 
@@ -116,13 +134,17 @@ public class PlayerStates : MonoBehaviour
                 }
                 if (_currentHealth <= 0)
                 {
-               
-                    GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.none);
-                    GameManager.Instance.UpdateGameState(GameStates.Trail);
+
+                    switch (GameManager.Instance.playerState) 
+                    {
+                        case PlayerState.NotFree: GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.none); break;
+                        case PlayerState.NoHandCuf: GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal); break;
+                        case PlayerState.NoCamShake: GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.JusticePortal); break;
+                    }
+                  GameManager.Instance.UpdateGameState(GameStates.Trail);
                 }
             }
     }
- 
 
 }
 

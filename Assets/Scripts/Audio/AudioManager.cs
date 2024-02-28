@@ -32,16 +32,53 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }  
     }
+
+    public void OnDrowning(AudioType type, string name)
+    {
+       
+                SFX.clip = GetClip(type, name);
+                SFX.loop = true;
+                SFX.Play();          
+    }
+
+    public void NotDrowning()
+    {
+        SFX.clip = null;
+        SFX.loop = false;
+        SFX.Stop();
+
+    }
+
+
+    public void LoopStop(AudioType type, string name)
+    {
+        switch (type)
+        {
+            case AudioType.SFX:
+                SFX.Stop();
+                //SFX.PlayOneShot(GetClip(type, name));
+                //SFX.loop = false;
+                break;
+
+            case AudioType.Music:
+                Music.Stop();
+                // Music.PlayOneShot(GetClip(type, name));
+                //Music.loop = false;
+                break;
+        }
+    }
     public void Play(AudioType type, string name)
     {
         switch (type)
         {
             case AudioType.SFX:
-                SFX.PlayOneShot(GetClip(type, name));
+                SFX.PlayOneShot(GetClip(type, name));              
                 break;
 
             case AudioType.Music:
-                Music.PlayOneShot(GetClip(type, name));
+                Music.Stop();
+                Music.clip = GetClip(type, name);
+                Music.Play();
                 break;
 
             case AudioType.Dialog:
@@ -72,6 +109,19 @@ public class AudioManager : MonoBehaviour
         MuteType(AudioType.Music);
         MuteType(AudioType.SFX);
         MuteType(AudioType.Dialog);
+    }
+
+    public void PauseAll()
+    {
+        SFX.Pause();
+        Music.Pause();
+        Dialog.Pause();
+    }
+    public void ResumeAll()
+    {
+        SFX.Play();
+        Music.Play();
+        Dialog.Play();
     }
 
     public AudioClip GetClip(AudioType type, string name)

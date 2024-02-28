@@ -6,6 +6,8 @@ public class PasscodePuzzle : InteractableBase
     [SerializeField] private Transform puzzleSpawner;
     [SerializeField] private GameObject portal;
     [SerializeField] private CamShake camshake;
+    [SerializeField] private GameObject ClosedCase;
+    [SerializeField] private GameObject OpenCase;
     public bool isSolved;
     private bool isActive = false;
 
@@ -13,6 +15,12 @@ public class PasscodePuzzle : InteractableBase
     bool isT;
     bool isV;
 
+
+    private void Start()
+    {
+        ClosedCase.SetActive(true);
+        OpenCase.SetActive(false);
+    }
     public override void OnInteract()
     {
         base.OnInteract();
@@ -23,12 +31,12 @@ public class PasscodePuzzle : InteractableBase
         }
         else
         {
-            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.3f);
         }
     }
     private void DisplayPuzzleText()
     {
-        TextManger.instance.ShowInteractableText(transform, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.2f);
+        TextManger.instance.ShowInteractableText(transform, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.4f);
     }
     public void Update()
     {
@@ -52,12 +60,16 @@ public class PasscodePuzzle : InteractableBase
                     }
                 }
             }
+
             if(isSolved) 
             { 
+                OpenCase.SetActive(true);
+                ClosedCase.SetActive(false);
                 portal.SetActive(true);
                 camshake.enabled = false;
                 GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.JusticePortal);
                 GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.TWO);
+                GameManager.Instance.playerState = PlayerState.NoCamShake;
                 StopPuzzle();
             }
         }
@@ -74,7 +86,7 @@ public class PasscodePuzzle : InteractableBase
         }
         if (isSolved)
         {
-            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.3f);
         }
     }
 }

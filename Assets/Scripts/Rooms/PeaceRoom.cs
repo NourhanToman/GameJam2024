@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,12 @@ public class PeaceRoom : MonoBehaviour
     public GameObject portal;
     private void Start()
     {
+        AudioManager.instance.Play(AudioType.Music, "Peace");
+        AudioManager.instance.OnDrowning(AudioType.SFX, "Breathe");
+        GameManager.Instance.Player = GameObject.FindWithTag("Player");
+        GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
+        GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
+
         portal.SetActive(false);
         if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {

@@ -42,6 +42,7 @@ public class WheelBehavier : InteractableBase
         portal.gameObject.SetActive(true);
         GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
         GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.THREE);
+        GameManager.Instance.playerState = PlayerState.NoHandCuf;
 
     }
 }

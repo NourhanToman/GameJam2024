@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,12 +8,18 @@ public class FreedomRoom : MonoBehaviour
 {
     
     private bool isSolved = false;
-  //  public GameObject portal;
+   // AudioClip clip;
+  //  private AudioSource audioSource;
 
     private void Start()
     {
-       // portal.SetActive(false);
-        if(GameManager.Instance.attempts == RoomsAttempts.ONE)
+        AudioManager.instance.Play(AudioType.Music, "Freedom");
+        GameManager.Instance.Player = GameObject.FindWithTag("Player");
+        GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
+        GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
+        //clip= AudioManager.instance.GetClip(AudioType.SFX, "Water");
+        // AudioManager.instance.LoopPlay(AudioType.SFX, "Water");
+        if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
             StartCoroutine(PlayerFirstVerse());
         }
@@ -21,6 +28,8 @@ public class FreedomRoom : MonoBehaviour
             StartCoroutine(PlayerSecondVerse());
         }
     }
+
+
 
     private IEnumerator PlayerSecondVerse()
     {
@@ -47,9 +56,6 @@ public class FreedomRoom : MonoBehaviour
                     
                     break;
                 case roomsRequirments.FreedomPortal:
-                   // GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.FreedomPortal);
-                    
-                   // portal.SetActive (true);
                     break;
             }
         }
