@@ -86,7 +86,7 @@ public class TextManger : MonoBehaviour
     public void ShowInteractableText(Transform interactable , InteractableObjText message)
     {
        
-        GameObject messageObj = Instantiate(_InteractablePrefab, interactable.position + new Vector3(0, _interactTxtDistnce, 0), Quaternion.identity,interactable);
+        GameObject messageObj = Instantiate(_InteractablePrefab, interactable.position + new Vector3(0, _interactTxtDistnce, -0.2f), Quaternion.identity,interactable);
 
         messageObj.transform.localScale = _interactableTxtScale;
         messageObj.GetComponent<TextMeshPro>().text = message.messageText;

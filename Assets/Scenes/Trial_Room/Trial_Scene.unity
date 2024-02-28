@@ -9108,6 +9108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player(Trial Room)
       objectReference: {fileID: 0}
+    - target: {fileID: 890197215348668441, guid: 7f6a46e490111b042a880cd26dd16f7d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4985201661152060976, guid: 7f6a46e490111b042a880cd26dd16f7d,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
