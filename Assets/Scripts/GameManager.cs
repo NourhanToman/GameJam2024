@@ -28,10 +28,7 @@ public class GameManager : MonoBehaviour
     public RoomsAttempts attempts;
     public roomsRequirments requirments;
     public PlayerState playerState;
-   /* [HideInInspector] public int FreedomNoOfVisits = 0;
-    [HideInInspector] public int PeaceNoOfVisits = 0;
-    [HideInInspector] public int JusticeNoOfVisits = 0;*/
-    /*[HideInInspector]*/ public GameObject Player;
+    [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
     [HideInInspector] public CustomThirdPersonController cameraLock;
     private void Awake()
@@ -48,7 +45,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
         state = GameStates.Bedroom;
@@ -56,10 +52,6 @@ public class GameManager : MonoBehaviour
         requirments = roomsRequirments.book;
         playerState = PlayerState.NotFree;
         cameraLock = Player.GetComponent<CustomThirdPersonController>();
-    }
-    private void Update()
-    {
-
     }
     public void UpdateGameState(GameStates states)
     {
@@ -93,7 +85,10 @@ public class GameManager : MonoBehaviour
             case GameStates.Win:
                 SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
-                break;    
+                break;
+           /* case GameStates.MainMenu:
+                Destroy(gameObject);
+                break;*/
         }
     }
 
@@ -116,7 +111,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
 
     public void UpdateRoomsAttempts(RoomsAttempts attempt)
     {
@@ -143,14 +137,14 @@ public enum PlayerState
 }
 public enum GameStates
 {
+    MainMenu,
     Bedroom,
     Trail,
     Justice,
     Peace,
     Freedom,
     Win
-   /* Pause,
-    Resume*/
+   
 }
 
 

@@ -6774,6 +6774,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 67020adf1053a9f48894ede21b329c7d, type: 3}
     - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
         type: 3}
+      propertyPath: sfxAudio.Array.data[1]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 159477527446c2a4aa621a61f12f9a18, type: 3}
+    - target: {fileID: 5016155053999536807, guid: 68c3eed682603464f9f3bbd4df08c6e8,
+        type: 3}
       propertyPath: musicAudio.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
@@ -6830,7 +6835,7 @@ PrefabInstance:
     - target: {fileID: 6833923362358355038, guid: 68c3eed682603464f9f3bbd4df08c6e8,
         type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7524,6 +7529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.23643327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382666375936254585, guid: 3c6e72ecab8b250408c770d7bc8da70c,
+        type: 3}
+      propertyPath: chainDrag
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4382666375936254585, guid: 3c6e72ecab8b250408c770d7bc8da70c,
         type: 3}
