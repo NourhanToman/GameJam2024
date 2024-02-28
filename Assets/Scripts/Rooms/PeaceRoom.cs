@@ -8,7 +8,7 @@ public class PeaceRoom : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.Play(AudioType.Music, "Peace");
-        AudioManager.instance.OnDrowning(AudioType.SFX, "Breathe");
+        AudioManager.instance.SFXLoop(AudioType.SFX, "Breathe");
         GameManager.Instance.Player = GameObject.FindWithTag("Player");
         GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
         GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();

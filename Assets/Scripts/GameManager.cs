@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.Bedroom:
                 PauseMenuExists = false;
-                SceneManager.LoadScene(1);
+                SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
                 Player = GameObject.FindWithTag("Player");
                 cameraLock = Player.GetComponent<CustomThirdPersonController>();
@@ -80,29 +80,29 @@ public class GameManager : MonoBehaviour
                 break;
             case GameStates.Trail:
                 PauseMenuExists = false;
-                SceneManager.LoadScene(2);
+                SceneController.instance.NextScene(2);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Justice:
                 PauseMenuExists = false;
                 //JusticeNoOfVisits++;
-                SceneManager.LoadScene(3);
+                SceneController.instance.NextScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
                 PauseMenuExists = false;
                 //PeaceNoOfVisits++;
-                SceneManager.LoadScene(5);
+                SceneController.instance.NextScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
                 PauseMenuExists = false;
                 //FreedomNoOfVisits++;
-                SceneManager.LoadScene(4);
+                SceneController.instance.NextScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Win:
-                SceneManager.LoadScene(1);
+                SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;    
         }

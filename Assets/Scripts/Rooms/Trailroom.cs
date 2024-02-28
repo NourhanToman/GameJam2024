@@ -19,7 +19,7 @@ public class TrailRoom : MonoBehaviour
     void Start()
     {
         AudioManager.instance.Play(AudioType.Music, "Trail");
-        AudioManager.instance.NotDrowning();
+        AudioManager.instance.NoSFXLoop();
         GameManager.Instance.Player = GameObject.FindWithTag("Player");
         GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
         GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();

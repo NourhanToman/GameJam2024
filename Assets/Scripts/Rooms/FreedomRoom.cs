@@ -14,6 +14,7 @@ public class FreedomRoom : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.Play(AudioType.Music, "Freedom");
+        AudioManager.instance.SFXLoop(AudioType.SFX, "Water");
         GameManager.Instance.Player = GameObject.FindWithTag("Player");
         GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
         GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();

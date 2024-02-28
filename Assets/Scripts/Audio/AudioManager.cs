@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
         }  
     }
 
-    public void OnDrowning(AudioType type, string name)
+    public void SFXLoop(AudioType type, string name)
     {
        
                 SFX.clip = GetClip(type, name);
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
                 SFX.Play();          
     }
 
-    public void NotDrowning()
+    public void NoSFXLoop()
     {
         SFX.clip = null;
         SFX.loop = false;
