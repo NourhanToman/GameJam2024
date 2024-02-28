@@ -13,7 +13,6 @@ public class PasscodePuzzle : InteractableBase
 
     bool isY;
     bool isT;
-    bool isV;
 
 
     private void Start()
@@ -52,7 +51,7 @@ public class PasscodePuzzle : InteractableBase
                 {
                     isY = true;
                 }
-                if (isT)
+                if (isY)
                 {
                     if (Input.GetKeyDown(KeyCode.V))
                     {
