@@ -2451,31 +2451,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000000046682544
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.010000116
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99932843
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.036643673
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -5.8207654e-11
-      objectReference: {fileID: 0}
     - target: {fileID: 1407042386272007550, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -2485,16 +2460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lens.m_SensorSize.y
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000000046682544
-      objectReference: {fileID: 0}
-    - target: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.010000116
       objectReference: {fileID: 0}
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
