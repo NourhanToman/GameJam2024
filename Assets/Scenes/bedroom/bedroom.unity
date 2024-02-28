@@ -8030,9 +8030,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950234824082407368, guid: 3c6e72ecab8b250408c770d7bc8da70c,
         type: 3}
+      propertyPath: _rayDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950234824082407368, guid: 3c6e72ecab8b250408c770d7bc8da70c,
+        type: 3}
       propertyPath: _uiInteraction
       value: 
       objectReference: {fileID: 1725130133}
+    - target: {fileID: 8950234824082407368, guid: 3c6e72ecab8b250408c770d7bc8da70c,
+        type: 3}
+      propertyPath: _raySphereRadius
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8997561490272038113, guid: 3c6e72ecab8b250408c770d7bc8da70c,
         type: 3}
       propertyPath: m_LocalPosition.x
