@@ -652,6 +652,7 @@ MonoBehaviour:
   shake: {fileID: 3454726896340806311}
   leftchain: {fileID: 6506195319815620703}
   rightchain: {fileID: 1665782531946811213}
+  legchain: {fileID: 8513396791503707355}
   speed: {fileID: 5601773419549015442}
 --- !u!1 &651959251215580852
 GameObject:
@@ -8578,6 +8579,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &8513396791503707355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7af1bb1ebcf954a439db899eceac7251,
+    type: 3}
+  m_PrefabInstance: {fileID: 8855414523189420426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9038295549169043041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7af1bb1ebcf954a439db899eceac7251,

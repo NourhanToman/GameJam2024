@@ -926,7 +926,7 @@ Transform:
   m_GameObject: {fileID: 1796342996654686356}
   serializedVersion: 2
   m_LocalRotation: {x: 0.036643673, y: 0.0000000018626449, z: -5.8207654e-11, w: 0.99932843}
-  m_LocalPosition: {x: -0.000000046682544, y: 1.7, z: -0.010000116}
+  m_LocalPosition: {x: -0.00000004057074, y: 1.7, z: -0.009999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3521,7 +3521,7 @@ Transform:
   m_GameObject: {fileID: 5186294559110353837}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09315257, y: 0, z: 0, w: 0.99565184}
-  m_LocalPosition: {x: -0.000000046682544, y: 1.7, z: -0.010000116}
+  m_LocalPosition: {x: -0.00000004057074, y: 1.7, z: -0.009999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7662,6 +7662,7 @@ MonoBehaviour:
   shake: {fileID: 5240041307256443964}
   leftchain: {fileID: 1956488511260931520}
   rightchain: {fileID: 7635856244352348243}
+  legchain: {fileID: 8388227876304983265}
   speed: {fileID: 184382715019148820}
 --- !u!1 &9179463898295138941
 GameObject:
@@ -8530,6 +8531,12 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &8388227876304983265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7af1bb1ebcf954a439db899eceac7251,
+    type: 3}
+  m_PrefabInstance: {fileID: 8694640115432892848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8607705489083420870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8080258626708407946, guid: 7af1bb1ebcf954a439db899eceac7251,

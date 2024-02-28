@@ -8,6 +8,7 @@ public class PlayerEffects: MonoBehaviour
     [SerializeField] private CamShake shake;
     [SerializeField] private GameObject leftchain;
     [SerializeField] private GameObject rightchain;
+    [SerializeField] private GameObject legchain;
     [SerializeField] private CustomThirdPersonController speed;
     
 
@@ -22,6 +23,7 @@ public class PlayerEffects: MonoBehaviour
             shake.enabled = false;
             leftchain.gameObject.SetActive(false);
             rightchain.gameObject.SetActive(false);
+            legchain.gameObject.SetActive(false);
             speed.MoveSpeed = 3.5f;
             speed.SprintSpeed = 8;
         }
