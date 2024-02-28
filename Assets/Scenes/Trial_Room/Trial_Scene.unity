@@ -6344,80 +6344,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 701497102}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
---- !u!1 &1060931187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1060931189}
-  - component: {fileID: 1060931188}
-  - component: {fileID: 1060931191}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1060931188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060931187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294f624d2d61614418ac230e81b76097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 1
-  attempts: 0
-  requirments: 0
-  playerState: 0
-  Player: {fileID: 0}
-  playerInputs: {fileID: 0}
-  cameraLock: {fileID: 0}
---- !u!4 &1060931189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060931187}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.863127, y: 0.91736746, z: -712}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060931191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060931187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68dc755e7f949c43ab2ed23f25e4c0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _DialogTextPrefab: {fileID: 5239843956051376595, guid: df8d59d5cf6f2414eadcb35f0b44c743,
-    type: 3}
-  _InteractablePrefab: {fileID: 6956638830375574776, guid: 0b53645b5e5b19d4896b7eb314cb29e5,
-    type: 3}
-  _dialogTxtDistance: 10
-  _interactTxtDistnce: 0.5
-  _dialogHight: 2
-  _dialogScale: {x: 0.5, y: 0.5, z: 0.5}
-  _interactableTxtScale: {x: 0.1, y: 0.1, z: 0.1}
-  _player: {fileID: 4567582554980849529}
 --- !u!1 &1090613984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9478,37 +9404,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0.66
   m_ShadowAngle: 0
---- !u!1 &2050453404
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2050453405}
-  m_Layer: 0
-  m_Name: TrailRoom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2050453405
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050453404}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.607374, y: 1.8448955, z: -696.28174}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064622613
 GameObject:
   m_ObjectHideFlags: 0
@@ -10291,12 +10186,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0.66
   m_ShadowAngle: 0
---- !u!1 &4567582554980849529 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3060720939834123699, guid: 7f6a46e490111b042a880cd26dd16f7d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8963649557159406173}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8963649557159406173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10379,9 +10268,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1060931189}
   - {fileID: 233875030}
-  - {fileID: 2050453405}
   - {fileID: 172581701}
   - {fileID: 968545223}
   - {fileID: 1788036500}
