@@ -31,12 +31,12 @@ public class PasscodePuzzle : InteractableBase
         }
         else
         {
-            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.3f);
         }
     }
     private void DisplayPuzzleText()
     {
-        TextManger.instance.ShowInteractableText(transform, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.2f);
+        TextManger.instance.ShowInteractableText(transform, $"Enter The Password: {new string('*', playerInput.Length)} ", 0.4f);
     }
     public void Update()
     {
@@ -86,7 +86,7 @@ public class PasscodePuzzle : InteractableBase
         }
         if (isSolved)
         {
-            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.1f);
+            TextManger.instance.ShowInteractableText(transform, "Unlocked", 0.3f);
         }
     }
 }

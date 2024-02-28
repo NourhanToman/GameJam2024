@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ public class FreedomRoom : MonoBehaviour
 
     private void Start()
     {
-       //clip= AudioManager.instance.GetClip(AudioType.SFX, "Water");
-       // AudioManager.instance.LoopPlay(AudioType.SFX, "Water");
+        AudioManager.instance.Play(AudioType.Music, "Freedom");
+        GameManager.Instance.Player = GameObject.FindWithTag("Player");
+        GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
+        GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
+        //clip= AudioManager.instance.GetClip(AudioType.SFX, "Water");
+        // AudioManager.instance.LoopPlay(AudioType.SFX, "Water");
         if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
             StartCoroutine(PlayerFirstVerse());

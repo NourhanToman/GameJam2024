@@ -33,21 +33,23 @@ public class AudioManager : MonoBehaviour
         }  
     }
 
-    public void LoopPlay(AudioType type, string name)
+    public void OnDrowning(AudioType type, string name)
     {
-        switch (type)
-        {
-            case AudioType.SFX:
-                SFX.PlayOneShot(GetClip(type, name));
+       
+                SFX.clip = GetClip(type, name);
                 SFX.loop = true;
-                break;
-
-            case AudioType.Music:
-                Music.PlayOneShot(GetClip(type, name));
-                Music.loop = true;
-                break;
-        }
+                SFX.Play();          
     }
+
+    public void NotDrowning()
+    {
+        SFX.clip = null;
+        SFX.loop = false;
+        SFX.Stop();
+
+    }
+
+
     public void LoopStop(AudioType type, string name)
     {
         switch (type)
@@ -74,7 +76,9 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case AudioType.Music:
-                Music.PlayOneShot(GetClip(type, name));              
+                Music.Stop();
+                Music.clip = GetClip(type, name);
+                Music.Play();
                 break;
 
             case AudioType.Dialog:
@@ -101,11 +105,24 @@ public class AudioManager : MonoBehaviour
                 break;
         }
     }
-    public void All(AudioType type)
+    public void MuteAll(AudioType type)
     {
         MuteType(AudioType.Music);
         MuteType(AudioType.SFX);
         MuteType(AudioType.Dialog);
+    }
+
+    public void PauseAll()
+    {
+        SFX.Pause();
+        Music.Pause();
+        Dialog.Pause();
+    }
+    public void ResumeAll()
+    {
+        SFX.Play();
+        Music.Play();
+        Dialog.Play();
     }
 
     public AudioClip GetClip(AudioType type, string name)

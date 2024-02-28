@@ -75,9 +75,7 @@ public class PlayerStates : MonoBehaviour
  
     void Update()
     {
-       /* if (GameManager.Instance.state == GameStates.Freedom)
-        {*/
-           // Debug.Log("Freedom");
+      
         if (_pool != null)
         {
             if (_camera.transform.position.y - _pool.transform.position.y <= 0f)
@@ -87,17 +85,21 @@ public class PlayerStates : MonoBehaviour
             else
             {
                 isDrowning = false;
+               
+                
             }
         }
 
         if(GameManager.Instance.state == GameStates.Peace)
         {
-           // Debug.Log("Peace");
+           
             isSuffocating = true;
+            
         }
         else
         {
             isSuffocating = false;
+           
         }
 
 
@@ -143,7 +145,6 @@ public class PlayerStates : MonoBehaviour
                 }
             }
     }
- 
 
 }
 

@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,8 +18,13 @@ public class TrailRoom : MonoBehaviour
 
     void Start()
     {
-        AudioManager.instance.LoopStop(AudioType.SFX, "Water");
-        Debug.Log(GameManager.Instance.attempts);
+        AudioManager.instance.Play(AudioType.Music, "Trail");
+        AudioManager.instance.NotDrowning();
+        GameManager.Instance.Player = GameObject.FindWithTag("Player");
+        GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
+        GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
+       // AudioManager.instance.LoopStop(AudioType.SFX, "Water");
+        
         switch (GameManager.Instance.attempts)
         {
             case RoomsAttempts.ONE: 
