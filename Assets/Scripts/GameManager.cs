@@ -27,16 +27,10 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public RoomsAttempts attempts;
     public roomsRequirments requirments;
-    //public GameObject PauseMenuPrefab;
-    private GameObject PauseMenuInstan;
     public PlayerState playerState;
-   /* [HideInInspector] public int FreedomNoOfVisits = 0;
-    [HideInInspector] public int PeaceNoOfVisits = 0;
-    [HideInInspector] public int JusticeNoOfVisits = 0;*/
-    /*[HideInInspector]*/ public GameObject Player;
+    [HideInInspector] public GameObject Player;
     [HideInInspector] public StarterAssetsInputs playerInputs;
     [HideInInspector] public CustomThirdPersonController cameraLock;
-    private bool PauseMenuExists = false;
     private void Awake()
     {
         if (Instance != null)
@@ -51,7 +45,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       // PauseMenuInstan = new GameObject();
         Player = GameObject.FindWithTag("Player");
         playerInputs = Player.GetComponent<StarterAssetsInputs>();
         state = GameStates.Bedroom;
@@ -60,10 +53,6 @@ public class GameManager : MonoBehaviour
         playerState = PlayerState.NotFree;
         cameraLock = Player.GetComponent<CustomThirdPersonController>();
     }
-    private void Update()
-    {
-
-    }
     public void UpdateGameState(GameStates states)
     {
         state = states;
@@ -71,40 +60,35 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameStates.Bedroom:
-                PauseMenuExists = false;
-                SceneManager.LoadScene(1);
+                SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
                 Player = GameObject.FindWithTag("Player");
                 cameraLock = Player.GetComponent<CustomThirdPersonController>();
                 playerInputs = Player.GetComponent<StarterAssetsInputs>();
                 break;
             case GameStates.Trail:
-                PauseMenuExists = false;
-                SceneManager.LoadScene(2);
+                SceneController.instance.NextScene(2);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Justice:
-                PauseMenuExists = false;
-                //JusticeNoOfVisits++;
-                SceneManager.LoadScene(3);
+                SceneController.instance.NextScene(3);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Peace:
-                PauseMenuExists = false;
-                //PeaceNoOfVisits++;
-                SceneManager.LoadScene(5);
+                SceneController.instance.NextScene(5);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Freedom:
-                PauseMenuExists = false;
-                //FreedomNoOfVisits++;
-                SceneManager.LoadScene(4);
+                SceneController.instance.NextScene(4);
                 TextManger.instance._player = Camera.main.gameObject;
                 break;
             case GameStates.Win:
-                SceneManager.LoadScene(1);
+                SceneController.instance.NextScene(1);
                 TextManger.instance._player = Camera.main.gameObject;
-                break;    
+                break;
+           /* case GameStates.MainMenu:
+                Destroy(gameObject);
+                break;*/
         }
     }
 
@@ -127,7 +111,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
 
     public void UpdateRoomsAttempts(RoomsAttempts attempt)
     {
@@ -154,14 +137,14 @@ public enum PlayerState
 }
 public enum GameStates
 {
+    MainMenu,
     Bedroom,
     Trail,
     Justice,
     Peace,
     Freedom,
     Win
-   /* Pause,
-    Resume*/
+   
 }
 
 

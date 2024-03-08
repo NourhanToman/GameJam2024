@@ -8,17 +8,14 @@ public class FreedomRoom : MonoBehaviour
 {
     
     private bool isSolved = false;
-   // AudioClip clip;
-  //  private AudioSource audioSource;
 
     private void Start()
     {
         AudioManager.instance.Play(AudioType.Music, "Freedom");
+        AudioManager.instance.SFXLoop(AudioType.SFX, "Water");
         GameManager.Instance.Player = GameObject.FindWithTag("Player");
         GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
         GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
-        //clip= AudioManager.instance.GetClip(AudioType.SFX, "Water");
-        // AudioManager.instance.LoopPlay(AudioType.SFX, "Water");
         if (GameManager.Instance.attempts == RoomsAttempts.ONE)
         {
             StartCoroutine(PlayerFirstVerse());
@@ -28,8 +25,6 @@ public class FreedomRoom : MonoBehaviour
             StartCoroutine(PlayerSecondVerse());
         }
     }
-
-
 
     private IEnumerator PlayerSecondVerse()
     {
