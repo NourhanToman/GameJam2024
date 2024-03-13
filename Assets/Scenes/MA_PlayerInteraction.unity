@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4818.4614, g: 3119.9966, b: 2329.2932, a: 1}
+  m_IndirectSpecularColor: {r: 4816.3696, g: 3119.9438, b: 2329.9143, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -876,6 +876,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1426700261}
+    - targetCorrespondingSourceObject: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1379899593}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d70d9c1b3ae751241b9e74404ea5f937, type: 3}
 --- !u!4 &864690309 stripped
@@ -1364,6 +1368,37 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!1 &1379899592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379899593}
+  m_Layer: 0
+  m_Name: PickUp Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379899593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379899592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.344, y: 0.009, z: 0.735}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2075595013}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426700260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1997,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2075595013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
+    type: 3}
+  m_PrefabInstance: {fileID: 864690308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2090940700
 GameObject:
   m_ObjectHideFlags: 0
