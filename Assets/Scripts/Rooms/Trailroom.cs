@@ -15,7 +15,6 @@ public class TrailRoom : MonoBehaviour
     [SerializeField] private GameObject JusticePortal;
     [SerializeField] private GameObject PeacePortal;
 
-
     void Start()
     {
         AudioManager.instance.Play(AudioType.Music, "Trail");
@@ -23,7 +22,6 @@ public class TrailRoom : MonoBehaviour
         GameManager.Instance.Player = GameObject.FindWithTag("Player");
         GameManager.Instance.playerInputs = GameManager.Instance.Player.GetComponent<StarterAssetsInputs>();
         GameManager.Instance.cameraLock = GameManager.Instance.Player.GetComponent<CustomThirdPersonController>();
-       // AudioManager.instance.LoopStop(AudioType.SFX, "Water");
         
         switch (GameManager.Instance.attempts)
         {

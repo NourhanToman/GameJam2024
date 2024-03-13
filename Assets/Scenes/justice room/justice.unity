@@ -2451,6 +2451,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00000004057074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385757112895674227, guid: d70d9c1b3ae751241b9e74404ea5f937,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009999997
+      objectReference: {fileID: 0}
     - target: {fileID: 1407042386272007550, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -2461,6 +2471,16 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.y
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00000004057074
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578289108509813530, guid: d70d9c1b3ae751241b9e74404ea5f937,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009999997
+      objectReference: {fileID: 0}
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2469,12 +2489,12 @@ PrefabInstance:
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.044
+      value: -0.499
       objectReference: {fileID: 0}
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.77
+      value: 0.176
       objectReference: {fileID: 0}
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
@@ -3473,6 +3493,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 726674260}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25755a8e0c820af4ca08514731854529,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 726674261}
   m_SourcePrefab: {fileID: 100100000, guid: 25755a8e0c820af4ca08514731854529, type: 3}
 --- !u!1 &726674259 stripped
 GameObject:
@@ -3496,6 +3520,27 @@ MonoBehaviour:
   _isInteractable: 1
   _tooltipMessage: Envelope
   TXT: {fileID: 11400000, guid: 1e6eadc2914ed234ca3104021f44e759, type: 2}
+--- !u!65 &726674261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726674259}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23394737, y: 0.0033966324, z: 0.106381774}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &738194284
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436738cee8270304cba784d2383a01c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextState: 1
+  nextState: 2
 --- !u!64 &1152681109
 MeshCollider:
   m_ObjectHideFlags: 0

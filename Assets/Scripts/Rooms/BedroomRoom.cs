@@ -31,8 +31,9 @@ public class BedroomRoom : MonoBehaviour
     {
         if (GameManager.Instance.state == GameStates.Win)
         {
-            TextManger.instance.PlayMessage(10);
-            SceneDelay();
+            AudioManager.instance.NoSFXLoop();
+            TextManger.instance.PlayMessage(10);        
+            StartCoroutine(SceneDelay());
 
         }
         else
@@ -46,7 +47,7 @@ public class BedroomRoom : MonoBehaviour
 
     private IEnumerator SceneDelay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         SceneController.instance.NextScene(0);
     }
     private IEnumerator DelaySound(float length, AudioType type, string name)

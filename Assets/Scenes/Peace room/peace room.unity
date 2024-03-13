@@ -7513,7 +7513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436738cee8270304cba784d2383a01c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextState: 5
+  nextState: 6
 --- !u!1 &1569724858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4791061893230386206, guid: eb968373146232446a842ccb982a6d16,
