@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436738cee8270304cba784d2383a01c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextState: 1
+  nextState: 2
 --- !u!1 &720616887
 GameObject:
   m_ObjectHideFlags: 0
