@@ -9,8 +9,8 @@ public class PickUpInteractable : InteractableBase
 
     private Vector3 originaPosition;
     private Vector3 originalRotation;
-
-    bool examineMode;
+    private bool KeepWorldPosition;
+    private bool examineMode;
 
     void Start()
     {
