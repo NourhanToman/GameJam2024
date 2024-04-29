@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Fire
   - Hint
+  - Lighter
   layers:
   - Default
   - TransparentFX

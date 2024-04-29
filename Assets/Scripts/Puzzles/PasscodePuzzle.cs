@@ -8,6 +8,8 @@ public class PasscodePuzzle : InteractableBase
     [SerializeField] private CamShake camshake;
     [SerializeField] private GameObject ClosedCase;
     [SerializeField] private GameObject OpenCase;
+    [SerializeField] private GameObject Lighter;
+
     public bool isSolved;
     private bool isActive = false;
 
@@ -66,6 +68,7 @@ public class PasscodePuzzle : InteractableBase
                 ClosedCase.SetActive(false);
                 portal.SetActive(true);
                 camshake.enabled = false;
+                Lighter.layer = 6;
                 GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.JusticePortal);
                 GameManager.Instance.UpdateRoomsAttempts(RoomsAttempts.TWO);
                 GameManager.Instance.playerState = PlayerState.NoCamShake;
