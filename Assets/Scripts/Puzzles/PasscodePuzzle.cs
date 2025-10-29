@@ -4,7 +4,7 @@ public class PasscodePuzzle : InteractableBase
     [SerializeField] private string passcodeAnswer;
     [SerializeField] private string playerInput;
     [SerializeField] private Transform puzzleSpawner;
-    [SerializeField] private GameObject portal;
+   // [SerializeField] private GameObject portal;
     [SerializeField] private CamShake camshake;
     [SerializeField] private GameObject ClosedCase;
     [SerializeField] private GameObject OpenCase;
@@ -66,7 +66,7 @@ public class PasscodePuzzle : InteractableBase
             { 
                 OpenCase.SetActive(true);
                 ClosedCase.SetActive(false);
-                portal.SetActive(true);
+                //portal.SetActive(true);
                 camshake.enabled = false;
                 Lighter.layer = 6;
                 GameManager.Instance.UpdateRoomsRequirements(roomsRequirments.JusticePortal);

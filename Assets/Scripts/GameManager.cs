@@ -20,6 +20,7 @@ public enum roomsRequirments
     JusticePortal,
     PeacePortal,
     box
+    
 }
 public class GameManager : MonoBehaviour
 {

@@ -2525,7 +2525,7 @@ PrefabInstance:
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.88
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 6186979962343385678, guid: d70d9c1b3ae751241b9e74404ea5f937,
         type: 3}
@@ -3886,7 +3886,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7335c5e743a92664ca98a9074ee7e890,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2040542448765327740, guid: 7335c5e743a92664ca98a9074ee7e890,
         type: 3}
@@ -4553,6 +4553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b589fe1b775e17248847440093bef8b9,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b589fe1b775e17248847440093bef8b9,
+        type: 3}
       propertyPath: m_TagString
       value: Lighter
       objectReference: {fileID: 0}
@@ -4613,7 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multipleUse: 0
-  _isInteractable: 1
+  _isInteractable: 0
   _tooltipMessage: Lighter
   TXT: {fileID: 11400000, guid: 3ee87acc61f5e4f448948afa73f7f030, type: 2}
 --- !u!114 &983420433
@@ -4623,7 +4628,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983420426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0c8f273e33ae654a8a79ee380b54121, type: 3}
   m_Name: 
@@ -4768,7 +4773,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f31486ee32e7517459992678628bd0b6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6589126927893049898, guid: f31486ee32e7517459992678628bd0b6,
         type: 3}
@@ -7459,7 +7464,6 @@ MonoBehaviour:
   passcodeAnswer: TYV
   playerInput: 
   puzzleSpawner: {fileID: 1902301179}
-  portal: {fileID: 1152681107}
   camshake: {fileID: 542132607}
   ClosedCase: {fileID: 1902301178}
   OpenCase: {fileID: 1049404238}
